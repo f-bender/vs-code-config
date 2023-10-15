@@ -1,0 +1,125 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+  {
+    "key": "ctrl+shift+c",
+    "command": "-workbench.action.terminal.openNativeConsole",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+c",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly && !vim.active"
+  },
+  {
+    "key": "ctrl+oem_2",
+    "command": "-editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+enter",
+    "command": "-editor.action.previousMatchFindAction",
+    "when": "editorFocus && findInputFocussed"
+  },
+  {
+    "key": "ctrl+shift+q",
+    "command": "python.execSelectionInTerminal",
+    "when": "editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
+  },
+  {
+    "key": "shift+enter",
+    "command": "-python.execSelectionInTerminal",
+    "when": "editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
+  },
+  {
+    "key": "ctrl+shift+x",
+    "command": "-workbench.view.extensions",
+    "when": "viewContainer.workbench.view.extensions.enabled"
+  },
+  {
+    "key": "ctrl+shift+x",
+    "command": "terminal.focus",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+y",
+    "command": "workbench.action.focusActiveEditorGroup"
+  },
+  {
+    "key": "ctrl+shift+oem_102",
+    "command": "workbench.explorer.fileView.focus"
+  },
+  {
+    "key": "ctrl+u",
+    "command": "editor.action.transformToUppercase",
+    "when": "!vim.active || vim.mode == 'Insert'"
+  },
+  {
+    "key": "ctrl+shift+z",
+    "command": "cursorUndo",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+u",
+    "command": "-cursorUndo",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+shift+z",
+    "command": "-redo"
+  },
+  {
+    "key": "ctrl+alt+y",
+    "command": "cursorRedo"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "editor.action.transformToLowercase",
+    "when": "!vim.active || vim.mode == 'Insert'"
+  },
+  {
+    "key": "ctrl+shift+a",
+    "command": "workbench.action.tasks.runTask",
+    "args": "pytest"
+  },
+  {
+    "key": "ctrl+z",
+    "command": "undo",
+    "when": "!vim.active || vim.mode == 'Insert'"
+  },
+  {
+    "key": "ctrl+z",
+    "command": "-undo"
+  },
+  {
+    "key": "ctrl+y",
+    "command": "redo",
+    "when": "!vim.active || vim.mode == 'Insert'"
+  },
+  {
+    "key": "ctrl+y",
+    "command": "-redo"
+  },
+  {
+    "key": "ctrl+7",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly && vim.active"
+  },
+  {
+    "key": "alt+k",
+    "command": "editor.action.insertCursorAbove",
+    "when": "editorTextFocus && vim.active"
+  },
+  {
+    "key": "alt+j",
+    "command": "editor.action.insertCursorBelow",
+    "when": "editorTextFocus && vim.active"
+  },
+  {
+    "key": "ctrl+oem_102",
+    "command": "git.stageChange"
+  },
+  {
+    "key": "ctrl+shift+y",
+    "command": "workbench.action.compareEditor.focusOtherSide"
+  }
+]

@@ -1,0 +1,107 @@
+{
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "files.autoSave": "afterDelay",
+  "jupyter.alwaysTrustNotebooks": true,
+  "python.pythonPath": "C:\\Program Files\\Python37\\python.exe",
+  "files.maxMemoryForLargeFilesMB": 8192,
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "python.defaultInterpreterPath": "D:\\dev\\python\\ai_companion\\.venv",
+  "workbench.editor.wrapTabs": true,
+  "redhat.telemetry.enabled": false,
+  "jupyter.askForKernelRestart": false,
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "explorer.confirmDragAndDrop": false,
+  "terminal.integrated.cursorStyle": "line",
+  "notebook.output.textLineLimit": 200,
+  "editor.inlineSuggest.enabled": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": true,
+    "markdown": false
+  },
+  "editor.wordWrapColumn": 120,
+  "[html]": {
+    "editor.defaultFormatter": "NikolaosGeorgiou.html-fmt-vscode"
+  },
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "yaml.customTags": [
+    "!And",
+    "!And sequence",
+    "!If",
+    "!If sequence",
+    "!Not",
+    "!Not sequence",
+    "!Equals",
+    "!Equals sequence",
+    "!Or",
+    "!Or sequence",
+    "!FindInMap",
+    "!FindInMap sequence",
+    "!Base64",
+    "!Join",
+    "!Join sequence",
+    "!Cidr",
+    "!Ref",
+    "!Sub",
+    "!Sub sequence",
+    "!GetAtt",
+    "!GetAZs",
+    "!ImportValue",
+    "!ImportValue sequence",
+    "!Select",
+    "!Select sequence",
+    "!Split",
+    "!Split sequence"
+  ],
+  "aws.codeWhisperer.shareCodeWhispererContentWithAWS": false,
+  "editor.rulers": [
+    120
+  ],
+  "python.autoComplete.extraPaths": [
+    "src"
+  ],
+  "python.analysis.extraPaths": [
+    "src"
+  ],
+  "editor.lineNumbers": "relative",
+  "editor.cursorSurroundingLines": 4,
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [
+        "<C-u>"
+      ],
+      "after": [
+        "<C-u>",
+        "z",
+        "z"
+      ]
+    },
+    {
+      "before": [
+        "<C-d>"
+      ],
+      "after": [
+        "<C-d>",
+        "z",
+        "z"
+      ]
+    },
+  ],
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "vim.easymotion": true,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  }
+}
