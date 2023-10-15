@@ -16,42 +16,9 @@
     "when": "editorTextFocus && !editorReadonly"
   },
   {
-    "key": "shift+enter",
-    "command": "-editor.action.previousMatchFindAction",
-    "when": "editorFocus && findInputFocussed"
-  },
-  {
-    "key": "ctrl+shift+q",
-    "command": "python.execSelectionInTerminal",
-    "when": "editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
-  },
-  {
-    "key": "shift+enter",
-    "command": "-python.execSelectionInTerminal",
-    "when": "editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
-  },
-  {
-    "key": "ctrl+shift+x",
-    "command": "-workbench.view.extensions",
-    "when": "viewContainer.workbench.view.extensions.enabled"
-  },
-  {
-    "key": "ctrl+shift+x",
-    "command": "terminal.focus",
-    "when": "!terminalFocus"
-  },
-  {
-    "key": "ctrl+shift+y",
-    "command": "workbench.action.focusActiveEditorGroup"
-  },
-  {
-    "key": "ctrl+shift+oem_102",
-    "command": "workbench.explorer.fileView.focus"
-  },
-  {
     "key": "ctrl+u",
     "command": "editor.action.transformToUppercase",
-    "when": "!vim.active || vim.mode == 'Insert'"
+    "when": "!vim.active"
   },
   {
     "key": "ctrl+shift+z",
@@ -74,7 +41,7 @@
   {
     "key": "ctrl+l",
     "command": "editor.action.transformToLowercase",
-    "when": "!vim.active || vim.mode == 'Insert'"
+    "when": "!vim.active"
   },
   {
     "key": "ctrl+shift+a",
@@ -115,11 +82,150 @@
     "when": "editorTextFocus && vim.active"
   },
   {
-    "key": "ctrl+oem_102",
-    "command": "git.stageChange"
+    "key": "ctrl+shift+l",
+    "command": "git.stageChange", // unfortunately broken...
+    "when": "dirtyDiffVisible"
   },
   {
-    "key": "ctrl+shift+y",
+    "key": "ctrl+h",
     "command": "workbench.action.compareEditor.focusOtherSide"
+  },
+  {
+    "key": "ctrl+shift+h",
+    "command": "git.revertChange" // unfortunately broken...
+  },
+  {
+    "key": "ctrl+shift+j",
+    "command": "editor.action.dirtydiff.next",
+    "when": "editorTextFocus && !textCompareEditorActive"
+  },
+  {
+    "key": "alt+f3",
+    "command": "-editor.action.dirtydiff.next",
+    "when": "editorTextFocus && !textCompareEditorActive"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "editor.action.dirtydiff.previous",
+    "when": "editorTextFocus && !textCompareEditorActive"
+  },
+  {
+    "key": "shift+alt+f3",
+    "command": "-editor.action.dirtydiff.previous",
+    "when": "editorTextFocus && !textCompareEditorActive"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "closeDirtyDiff",
+    "when": "dirtyDiffVisible && vim.active"
+  },
+  {
+    "key": "shift+escape",
+    "command": "-closeDirtyDiff",
+    "when": "dirtyDiffVisible"
+  },
+  {
+    "key": "ctrl+alt+f",
+    "command": "editor.toggleFold",
+    "when": "editorTextFocus && foldingEnabled && vim.active"
+  },
+  {
+    "key": "ctrl+oem_7",
+    "command": "workbench.action.toggleMaximizedPanel"
+  },
+  {
+    "key": "ctrl+alt+l",
+    "command": "workbench.action.moveEditorToNextGroup",
+    "when": "vim.active"
+  },
+  {
+    "key": "ctrl+alt+h",
+    "command": "workbench.action.moveEditorToPreviousGroup",
+    "when": "vim.active"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion && vim.active"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion && vim.active"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.terminal.selectNextSuggestion",
+    "when": "terminalFocus && terminalHasBeenCreated && terminalIsOpen && terminalSuggestWidgetVisible || terminalFocus && terminalIsOpen && terminalProcessSupported && terminalSuggestWidgetVisible && vim.active"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.terminal.selectPrevSuggestion",
+    "when": "terminalFocus && terminalHasBeenCreated && terminalIsOpen && terminalSuggestWidgetVisible || terminalFocus && terminalIsOpen && terminalProcessSupported && terminalSuggestWidgetVisible && vim.active"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "selectNextCodeAction",
+    "when": "codeActionMenuVisible && vim.active"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "selectPrevCodeAction",
+    "when": "codeActionMenuVisible && vim.active"
+  },
+  {
+    "key": "alt+f",
+    "command": "actions.find",
+    "when": "editorFocus || editorIsOpen && vim.active"
+  },
+  {
+    "key": "ctrl+shift+j",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+  },
+  {
+    "key": "ctrl+m",
+    "command": "editor.action.showHover",
+    "when": "editorTextFocus && vim.active"
+  },
+  {
+    "key": "j",
+    "command": "editor.action.scrollDownHover",
+    "when": "editorHoverFocused && vim.active"
+  },
+  {
+    "key": "k",
+    "command": "editor.action.scrollUpHover",
+    "when": "editorHoverFocused && vim.active"
+  },
+  {
+    "key": "l",
+    "command": "editor.action.scrollRightHover",
+    "when": "editorHoverFocused && vim.active"
+  },
+  {
+    "key": "h",
+    "command": "editor.action.scrollLeftHover",
+    "when": "editorHoverFocused && vim.active"
+  },
+  {
+    "key": "ctrl+u",
+    "command": "editor.action.pageUpHover",
+    "when": "editorHoverFocused && vim.active"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "editor.action.pageDownHover",
+    "when": "editorHoverFocused && vim.active"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "!editorTextFocus"
   }
 ]

@@ -1,18 +1,34 @@
 {
+  "[yaml]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "keep",
+    "gitlens.codeLens.scopes": [
+      "document"
+    ],
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    }
+  },
+  "svg.preview.mode": "img",
+  "files.watcherExclude": {
+    "**/.*cache/**": true,
+    "**/.dash/**": true,
+    "**/.venv/**": true
+  },
+  "githubPullRequests.pullBranch": "never",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
   },
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "files.autoSave": "afterDelay",
-  "jupyter.alwaysTrustNotebooks": true,
-  "python.pythonPath": "C:\\Program Files\\Python37\\python.exe",
-  "files.maxMemoryForLargeFilesMB": 8192,
   "notebook.cellToolbarLocation": {
     "default": "right",
     "jupyter-notebook": "left"
   },
-  "python.defaultInterpreterPath": "D:\\dev\\python\\ai_companion\\.venv",
   "workbench.editor.wrapTabs": true,
   "redhat.telemetry.enabled": false,
   "jupyter.askForKernelRestart": false,
@@ -32,7 +48,8 @@
     "editor.defaultFormatter": "NikolaosGeorgiou.html-fmt-vscode"
   },
   "[python]": {
-    "editor.formatOnType": true
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "ms-python.black-formatter" // old: "mikoz.black-py"
   },
   "yaml.customTags": [
     "!And",
@@ -73,9 +90,21 @@
   "python.analysis.extraPaths": [
     "src"
   ],
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.variableTypes": false, // clutters to much for my taste (especially for unions of many types)
+  "python.analysis.typeCheckingMode": "basic", // "strict" commonly complains about missing stubs
+  "python.analysis.autoFormatStrings": true,
+  "python.analysis.importFormat": "absolute",
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.autoSearchPaths": true,
+  "editor.formatOnSaveMode": "file",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
   "editor.lineNumbers": "relative",
-  "editor.cursorSurroundingLines": 4,
-  "vim.normalModeKeyBindings": [
+  "editor.cursorSurroundingLines": 8,
+  "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": [
         "<C-u>"
@@ -96,12 +125,169 @@
         "z"
       ]
     },
+    {
+      "before": [
+        "U"
+      ], // doesn't work correctly in VS Code, and creates a broken undo-history, which is dangerous!
+      "after": [
+        "u"
+      ] // so we just rebind it to "u"
+    },
+    // This would rebind it to the VS Code internal undo action, but I find the vim undo be nicer when using vim
+    // {
+    //   "before": ["u"],
+    //   "after": [],
+    //   "commands": [
+    //       {
+    //         "command": "undo"
+    //       }
+    //   ]
+    // },
+    // Likeweise, this would rebind Ctrl+R to VS Code's redo
+    // {
+    //   "before": ["<C-r>"],
+    //   "after": [],
+    //   "commands": [
+    //       {
+    //         "command": "redo"
+    //       }
+    //   ]
+    // }
+    {
+      "before": [
+        "<C-o>"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "cursorUndo"
+        }
+      ]
+    },
+    {
+      "before": [
+        "<C-i>"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "cursorRedo"
+        }
+      ]
+    },
+    {
+      "before": [
+        "n"
+      ],
+      "after": [
+        "n",
+        "z",
+        "z"
+      ],
+    },
+    {
+      "before": [
+        "N"
+      ],
+      "after": [
+        "N",
+        "z",
+        "z"
+      ],
+    },
+    {
+      "before": [
+        "<leader>",
+        "c"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "c"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "d"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "d"
+      ]
+    },
+    {
+      "before": [
+        "<C-l>"
+      ],
+      "after": [
+        "<Esc>"
+      ],
+    },
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<leader>",
+        "p"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "d",
+        "p"
+      ]
+    },
+    {
+      "before": [
+        "<C-l>"
+      ],
+      "after": [
+        "<Esc>"
+      ],
+    },
+    {
+      "before": [
+        "<C-o>"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "cursorUndo"
+        }
+      ]
+    },
+    {
+      "before": [
+        "<C-i>"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "cursorRedo"
+        }
+      ]
+    },
+  ],
+  "vim.insertModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<C-l>"
+      ],
+      "after": [
+        "<Esc>"
+      ],
+    },
   ],
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "vim.easymotion": true,
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
-  }
+  },
+  "black-formatter.args": [
+    "--line-length=120"
+  ],
+  "vim.leader": " "
 }
