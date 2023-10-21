@@ -87,12 +87,23 @@
     "when": "dirtyDiffVisible"
   },
   {
+    "key": "ctrl+shift+l",
+    "command": "git.stageSelectedRanges", // as a workaround while the above doesn't work. Stage everything within the current selection
+    "when": "editorTextFocus"
+  },
+  {
     "key": "ctrl+h",
     "command": "workbench.action.compareEditor.focusOtherSide"
   },
   {
     "key": "ctrl+shift+h",
-    "command": "git.revertChange" // unfortunately broken...
+    "command": "git.revertChange", // unfortunately broken...
+    "when": "dirtyDiffVisible"
+  },
+  {
+    "key": "ctrl+shift+h",
+    "command": "git.revertSelectedRanges", // as a workaround while the above doesn't work. Revert everything within the current selection
+    "when": "editorTextFocus"
   },
   {
     "key": "ctrl+shift+j",
@@ -100,18 +111,8 @@
     "when": "editorTextFocus && !textCompareEditorActive"
   },
   {
-    "key": "alt+f3",
-    "command": "-editor.action.dirtydiff.next",
-    "when": "editorTextFocus && !textCompareEditorActive"
-  },
-  {
     "key": "ctrl+shift+k",
     "command": "editor.action.dirtydiff.previous",
-    "when": "editorTextFocus && !textCompareEditorActive"
-  },
-  {
-    "key": "shift+alt+f3",
-    "command": "-editor.action.dirtydiff.previous",
     "when": "editorTextFocus && !textCompareEditorActive"
   },
   {
@@ -191,7 +192,7 @@
   {
     "key": "ctrl+m",
     "command": "editor.action.showHover",
-    "when": "editorTextFocus && vim.active"
+    "when": "editorTextFocus && vim.active && vim.mode != 'SearchInProgressMode'"
   },
   {
     "key": "j",
@@ -227,5 +228,59 @@
     "key": "ctrl+l",
     "command": "workbench.action.focusActiveEditorGroup",
     "when": "!editorTextFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.quickOpenNavigateNextInTerminalPicker",
+    "when": "terminalFocus && vim.active"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpenNavigatePreviousInTerminalPicker",
+    "when": "terminalFocus && vim.active"
+  },
+  {
+    "key": "alt+j",
+    "command": "workbench.action.terminal.scrollToNextCommand",
+    "when": "terminalFocus && terminalHasBeenCreated && !accessibilityModeEnabled || terminalFocus && terminalProcessSupported && vim.active && !accessibilityModeEnabled"
+  },
+  {
+    "key": "alt+k",
+    "command": "workbench.action.terminal.scrollToPreviousCommand",
+    "when": "terminalFocus && terminalHasBeenCreated && !accessibilityModeEnabled || terminalFocus && terminalProcessSupported && vim.active && !accessibilityModeEnabled"
+  },
+  {
+    "key": "alt+u",
+    "command": "workbench.action.terminal.scrollUpPage",
+    "when": "terminalFocusInAny && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocusInAny && terminalProcessSupported && vim.active && !terminalAltBufferActive"
+  },
+  {
+    "key": "alt+d",
+    "command": "workbench.action.terminal.scrollDownPage",
+    "when": "terminalFocusInAny && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocusInAny && terminalProcessSupported && vim.active && !terminalAltBufferActive"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.terminal.scrollUp",
+    "when": "terminalFocusInAny && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocusInAny && terminalProcessSupported && !terminalAltBufferActive && vim.active"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.terminal.scrollDown",
+    "when": "terminalFocusInAny && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocusInAny && terminalProcessSupported && !terminalAltBufferActive && vim.active"
+  },
+  {
+    "key": "ctrl+m",
+    "command": "-editor.action.toggleTabFocusMode"
   }
 ]

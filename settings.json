@@ -131,33 +131,40 @@
       ], // doesn't work correctly in VS Code, and creates a broken undo-history, which is dangerous!
       "after": [
         "u"
-      ] // so we just rebind it to "u"
+      ],
     },
-    // This would rebind it to the VS Code internal undo action, but I find the vim undo be nicer when using vim
+    // // This would rebind it to the VS Code internal undo action, but I find the vim undo be nicer when using vim
     // {
-    //   "before": ["u"],
+    //   "before": [
+    //     "u"
+    //   ],
     //   "after": [],
     //   "commands": [
-    //       {
-    //         "command": "undo"
-    //       }
+    //     {
+    //       "command": "undo"
+    //     }
     //   ]
     // },
-    // Likeweise, this would rebind Ctrl+R to VS Code's redo
+    // // Likeweise, this would rebind Ctrl+R to VS Code's redo
     // {
-    //   "before": ["<C-r>"],
+    //   "before": [
+    //     "<C-r>"
+    //   ],
     //   "after": [],
     //   "commands": [
-    //       {
-    //         "command": "redo"
-    //       }
+    //     {
+    //       "command": "redo"
+    //     }
     //   ]
     // }
     {
       "before": [
         "<C-o>"
       ],
-      "after": [],
+      "after": [
+        "z",
+        "z"
+      ],
       "commands": [
         {
           "command": "cursorUndo"
@@ -168,7 +175,10 @@
       "before": [
         "<C-i>"
       ],
-      "after": [],
+      "after": [
+        "z",
+        "z"
+      ],
       "commands": [
         {
           "command": "cursorRedo"
@@ -209,6 +219,17 @@
     {
       "before": [
         "<leader>",
+        "x"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "x"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
         "d"
       ],
       "after": [
@@ -225,6 +246,42 @@
         "<Esc>"
       ],
     },
+    {
+      "before": [
+        "<leader>",
+        "<leader>",
+        "y"
+      ],
+      "after": [
+        "\"",
+        "+",
+        "y"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "<leader>",
+        "p"
+      ],
+      "after": [
+        "\"",
+        "+",
+        "p"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "<leader>",
+        "P"
+      ],
+      "after": [
+        "\"",
+        "+",
+        "P"
+      ]
+    },
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
@@ -236,6 +293,30 @@
         "\"",
         "_",
         "d",
+        "P"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "<leader>",
+        "y"
+      ],
+      "after": [
+        "\"",
+        "+",
+        "y"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "<leader>",
+        "p"
+      ],
+      "after": [
+        "\"",
+        "+",
         "p"
       ]
     },
@@ -277,6 +358,24 @@
       ],
       "after": [
         "<Esc>"
+      ],
+    },
+  ],
+  "vim.commandLineModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<C-l>"
+      ],
+      "after": [
+        "<Esc>"
+      ],
+    },
+    {
+      "before": [
+        "<C-m>"
+      ],
+      "after": [
+        "<C-l>"
       ],
     },
   ],
