@@ -157,34 +157,59 @@
     //     }
     //   ]
     // }
-    {
-      "before": [
-        "<C-o>"
-      ],
-      "after": [
-        "z",
-        "z"
-      ],
-      "commands": [
-        {
-          "command": "cursorUndo"
-        }
-      ]
-    },
-    {
-      "before": [
-        "<C-i>"
-      ],
-      "after": [
-        "z",
-        "z"
-      ],
-      "commands": [
-        {
-          "command": "cursorRedo"
-        }
-      ]
-    },
+    // // after all, the default vim <C-i> and <C-o> aren't actually that bad, and it makes sense to get used to them
+    // // so we will leave this commented out
+    // {
+    //   "before": [
+    //     "<C-o>"
+    //   ],
+    //   "after": [
+    //     "z",
+    //     "z"
+    //   ],
+    //   "commands": [
+    //     {
+    //       "command": "cursorUndo"
+    //     }
+    //   ]
+    // },
+    // {
+    //   "before": [
+    //     "<C-i>"
+    //   ],
+    //   "after": [
+    //     "z",
+    //     "z"
+    //   ],
+    //   "commands": [
+    //     {
+    //       "command": "cursorRedo"
+    //     }
+    //   ]
+    // },
+    // // this part doesn't seem to work anyways
+    // {
+    //   "before": [
+    //     "<C-O>"
+    //   ],
+    //   "after": [],
+    //   "commands": [
+    //     {
+    //       "command": "workbench.action.navigateBack"
+    //     }
+    //   ]
+    // },
+    // {
+    //   "before": [
+    //     "<C-I>"
+    //   ],
+    //   "after": [],
+    //   "commands": [
+    //     {
+    //       "command": "workbench.action.navigateForward"
+    //     }
+    //   ]
+    // },
     {
       "before": [
         "n"
@@ -280,6 +305,123 @@
         "\"",
         "+",
         "P"
+      ]
+    },
+    {
+      "before": [
+        "z",
+        "1"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "editor.unfoldAll"
+        },
+        {
+          "command": "editor.foldLevel1"
+        }
+      ]
+    },
+    {
+      "before": [
+        "z",
+        "2"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "editor.unfoldAll"
+        },
+        {
+          "command": "editor.foldLevel2"
+        }
+      ]
+    },
+    {
+      "before": [
+        "z",
+        "3"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "editor.unfoldAll"
+        },
+        {
+          "command": "editor.foldLevel3"
+        }
+      ]
+    },
+    {
+      "before": [
+        "z",
+        "4"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "editor.unfoldAll"
+        },
+        {
+          "command": "editor.foldLevel4"
+        }
+      ]
+    },
+    {
+      "before": [
+        "z",
+        "5"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "editor.unfoldAll"
+        },
+        {
+          "command": "editor.foldLevel5"
+        }
+      ]
+    },
+    {
+      "before": [
+        "z",
+        "6"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "editor.unfoldAll"
+        },
+        {
+          "command": "editor.foldLevel6"
+        }
+      ]
+    },
+    {
+      "before": [
+        "z",
+        "7"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "editor.unfoldAll"
+        },
+        {
+          "command": "editor.foldLevel7"
+        }
+      ]
+    },
+    {
+      "before": [
+        "z",
+        "0"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "editor.unfoldAll"
+        },
       ]
     },
   ],
@@ -388,5 +530,10 @@
   "black-formatter.args": [
     "--line-length=120"
   ],
-  "vim.leader": " "
+  "vim.leader": " ",
+  "workbench.sideBar.location": "right",
+  "workbench.panel.defaultLocation": "right",
+  "files.exclude": {
+    "**/.git": false
+  },
 }
