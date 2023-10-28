@@ -23,7 +23,7 @@
   {
     "key": "ctrl+shift+z",
     "command": "cursorUndo",
-    "when": "textInputFocus"
+    "when": "textInputFocus && !vim.active"
   },
   {
     "key": "ctrl+u",
@@ -35,8 +35,9 @@
     "command": "-redo"
   },
   {
-    "key": "ctrl+alt+y",
-    "command": "cursorRedo"
+    "key": "ctrl+shift+y",
+    "command": "cursorRedo",
+    "when": "!vim.active"
   },
   {
     "key": "ctrl+l",
@@ -127,7 +128,7 @@
   },
   {
     "key": "ctrl+alt+f",
-    "command": "editor.toggleFold",
+    "command": "editor.toggleFold", // NOTE: works in vim using "za"!
     "when": "editorTextFocus && foldingEnabled && vim.active"
   },
   {
@@ -291,5 +292,24 @@
     "key": "ctrl+shift+d",
     "command": "-workbench.view.debug",
     "when": "viewContainer.workbench.view.debug.enabled"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "workbench.action.quickOpen",
+    "when": "!vim.active"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "-workbench.action.quickOpen" // to allow Ctrl + E for going to end of the line in bash
+  },
+  {
+    "key": "alt+o",
+    "command": "cursorUndo",
+    "when": "textInputFocus && vim.active"
+  },
+  {
+    "key": "alt+i",
+    "command": "cursorRedo",
+    "when": "vim.active"
   }
 ]
