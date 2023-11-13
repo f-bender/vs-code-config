@@ -285,13 +285,9 @@
     "command": "-editor.action.toggleTabFocusMode"
   },
   {
-    "key": "ctrl+shift+d",
-    "command": "extension.partialDiff.diffSelectionWithClipboard"
-  },
-  {
-    "key": "ctrl+shift+d",
-    "command": "-workbench.view.debug",
-    "when": "viewContainer.workbench.view.debug.enabled"
+    "key": "alt+d",
+    "command": "extension.partialDiff.diffSelectionWithClipboard",
+    "when": "editorFocus"
   },
   {
     "key": "ctrl+e",
