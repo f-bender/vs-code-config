@@ -311,5 +311,20 @@
     "key": "alt+i",
     "command": "cursorRedo",
     "when": "vim.active"
+  },
+  {
+    "key": "ctrl+7",
+    "command": "workbench.action.terminal.focusFind",
+    "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported && vim.active"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "workbench.action.terminal.focusFind",
+    "when": "(terminalFindFocused && terminalHasBeenCreated && !vim.active || terminalFindFocused && terminalProcessSupported && !vim.active || terminalFocus && terminalHasBeenCreated && !vim.active || terminalFocus && terminalProcessSupported) && !vim.active"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "-workbench.action.terminal.focusFind",
+    "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   }
 ]
