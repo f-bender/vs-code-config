@@ -424,6 +424,17 @@
         },
       ]
     },
+    {
+      "before": [
+        "<C-p>"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.quickOpen"
+        },
+      ]
+    },
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
@@ -536,4 +547,5 @@
   "files.exclude": {
     "**/.git": false
   },
+  "editor.accessibilitySupport": "off",
 }
