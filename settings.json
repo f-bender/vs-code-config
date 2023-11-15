@@ -435,6 +435,45 @@
         },
       ]
     },
+    {
+      "before": [
+        "J"
+      ],
+      "after": [
+        "m",
+        "y",
+        "J",
+        "`",
+        "y"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "s"
+      ],
+      "after": [
+        ":",
+        "%",
+        "s",
+        "/",
+        "\\",
+        "<",
+        "<C-r>",
+        "<C-w>",
+        "\\",
+        ">",
+        "/",
+        "<C-r>",
+        "<C-w>",
+        "/",
+        "g",
+        "I",
+        "<Left>",
+        "<Left>",
+        "<Left>",
+      ]
+    },
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
@@ -475,32 +514,206 @@
     },
     {
       "before": [
+        "<leader>",
+        "<leader>",
+        "P"
+      ],
+      "after": [
+        "\"",
+        "+",
+        "P"
+      ]
+    },
+    {
+      "before": [
         "<C-l>"
       ],
       "after": [
         "<Esc>"
       ],
     },
+    // // like in normal mode, we actually rather use vim's Ctrl+I/O
+    // {
+    //   "before": [
+    //     "<C-o>"
+    //   ],
+    //   "after": [],
+    //   "commands": [
+    //     {
+    //       "command": "cursorUndo"
+    //     }
+    //   ]
+    // },
+    // {
+    //   "before": [
+    //     "<C-i>"
+    //   ],
+    //   "after": [],
+    //   "commands": [
+    //     {
+    //       "command": "cursorRedo"
+    //     }
+    //   ]
+    // },
     {
       "before": [
-        "<C-o>"
+        "<C-p>"
       ],
       "after": [],
       "commands": [
         {
-          "command": "cursorUndo"
-        }
+          "command": "workbench.action.quickOpen"
+        },
       ]
     },
     {
       "before": [
-        "<C-i>"
+        "<"
       ],
-      "after": [],
-      "commands": [
-        {
-          "command": "cursorRedo"
-        }
+      "after": [
+        "<",
+        "g",
+        "v"
+      ],
+    },
+    {
+      "before": [
+        ">"
+      ],
+      "after": [
+        ">",
+        "g",
+        "v"
+      ],
+    },
+    // // Stay in visual mode after yanking? Not so sure about this... usually you want to leave visual mode.
+    // // The annoying thing is that the cursor resets to where you started making the selection
+    // {
+    //   "before": [
+    //     "y"
+    //   ],
+    //   "after": [
+    //     "y",
+    //     "g",
+    //     "v"
+    //   ],
+    // },
+    {
+      "before": [
+        "J"
+      ],
+      "after": [
+        ":",
+        "m",
+        " ",
+        "'",
+        ">",
+        "+",
+        "1",
+        "<CR>",
+        "g",
+        "v",
+        ":",
+        // either the above or the below will fail; the correct one of them will be executed (weird VSCode Vim behaviour)
+        // for some reason, depending onwhich side of the visual selection the cursor is on, the meaning of the `< / `> marks switches
+        // (and one of them seems to be invalid, leading the command to fail)
+        // NOTE: '> is always the side the cursor is currently on, '< is always the other side! I.e. '< might actually
+        // come *after* >'
+        "m",
+        " ",
+        "'",
+        "<",
+        "+",
+        "1",
+        "<CR>",
+        "g",
+        "v",
+        "j",
+        "o",
+        "j",
+        "o",
+      ],
+    },
+    {
+      "before": [
+        "K"
+      ],
+      "after": [
+        ":",
+        "m",
+        " ",
+        "'",
+        ">",
+        "-",
+        "2",
+        "<CR>",
+        "g",
+        "v",
+        // either the above or the below will fail; the correct one of them will be executed (weird VSCode Vim behaviour)
+        // for some reason, depending onwhich side of the visual selection the cursor is on, the meaning of the `< / `> marks switches
+        // (and one of them seems to be invalid, leading the command to fail)
+        // NOTE: '> is always the side the cursor is currently on, '< is always the other side! I.e. '< might actually
+        // come *after* >'
+        ":",
+        "m",
+        " ",
+        "'",
+        "<",
+        "-",
+        "2",
+        "<CR>",
+        "g",
+        "v",
+        "k",
+        "o",
+        "k",
+        "o",
+      ],
+    },
+    {
+      "before": [
+        "<leader>",
+        "c"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "c"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "x"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "x"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "d"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "d"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "/"
+      ],
+      "after": [
+        "y",
+        "/",
+        "<C-R>",
+        "0",
+        "<CR>"
       ]
     },
   ],
