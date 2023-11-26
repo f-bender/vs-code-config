@@ -233,17 +233,6 @@
     {
       "before": [
         "<leader>",
-        "c"
-      ],
-      "after": [
-        "\"",
-        "_",
-        "c"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
         "x"
       ],
       "after": [
@@ -255,12 +244,45 @@
     {
       "before": [
         "<leader>",
+        "c"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "c"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
         "d"
       ],
       "after": [
         "\"",
         "_",
         "d"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "C"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "C"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "D"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "D"
       ]
     },
     {
@@ -474,6 +496,17 @@
         "<Left>",
       ]
     },
+    {
+      "before": [
+        "<leader>",
+        "/"
+      ],
+      "after": [
+        "/",
+        "\\",
+        "C"
+      ]
+    },
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
@@ -601,17 +634,6 @@
     {
       "before": [
         "<leader>",
-        "c"
-      ],
-      "after": [
-        "\"",
-        "_",
-        "c"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
         "x"
       ],
       "after": [
@@ -623,12 +645,45 @@
     {
       "before": [
         "<leader>",
+        "c"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "c"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
         "d"
       ],
       "after": [
         "\"",
         "_",
         "d"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "C"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "C"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "D"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "D"
       ]
     },
     {
