@@ -524,5 +524,57 @@
     "key": "alt+l",
     "command": "workbench.action.increaseViewSize",
     "when": "editorFocus && vim.active"
+  },
+  {
+    "key": "alt+j",
+    "command": "runCommands",
+    "when": "editorTextFocus && !editorReadonly && (vim.mode == 'Visual' || vim.mode == 'VisualLine')",
+    "args": {
+      "commands": [
+        "editor.action.moveLinesDownAction",
+        {
+          "command": "vim.remap",
+          "args": {
+            "after": [
+              "j",
+              "o",
+              "j",
+              "o",
+            ]
+          },
+        },
+      ]
+    }
+  },
+  {
+    "key": "alt+k",
+    "command": "runCommands",
+    "when": "editorTextFocus && !editorReadonly && (vim.mode == 'Visual' || vim.mode == 'VisualLine')",
+    "args": {
+      "commands": [
+        "editor.action.moveLinesUpAction",
+        {
+          "command": "vim.remap",
+          "args": {
+            "after": [
+              "k",
+              "o",
+              "k",
+              "o",
+            ]
+          },
+        },
+      ]
+    }
+  },
+  {
+    "key": "alt+j",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly && vim.mode == 'Normal'",
+  },
+  {
+    "key": "alt+k",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "editorTextFocus && !editorReadonly && vim.mode == 'Normal'",
   }
 ]
