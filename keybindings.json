@@ -136,14 +136,14 @@
     "command": "workbench.action.toggleMaximizedPanel"
   },
   {
-    "key": "ctrl+alt+l",
+    "key": "alt+l",
     "command": "workbench.action.moveEditorToNextGroup",
-    "when": "vim.active"
+    "when": "vim.active && !panelFocus && !sideBarFocus"
   },
   {
-    "key": "ctrl+alt+h",
+    "key": "alt+h",
     "command": "workbench.action.moveEditorToPreviousGroup",
-    "when": "vim.active"
+    "when": "!sideBarFocus && !panelFocus && vim.active"
   },
   {
     "key": "ctrl+k",
@@ -426,7 +426,7 @@
     "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused"
   },
   {
-    "key": "y",
+    "key": "c",
     "command": "notebook.cell.copy",
     "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused && !vim.active"
   },
@@ -476,11 +476,6 @@
     "when": "notebookEditorFocused && !inputFocus"
   },
   {
-    "key": "alt+h",
-    "command": "workbench.action.terminal.resizePaneLeft",
-    "when": "terminalFocus && vim.active"
-  },
-  {
     "key": "ctrl+h",
     "command": "workbench.action.terminal.focusNextPane",
     "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
@@ -491,37 +486,42 @@
     "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
   },
   {
-    "key": "alt+l",
+    "key": "ctrl+alt+l",
     "command": "workbench.action.terminal.resizePaneRight",
     "when": "terminalFocus && vim.active"
   },
   // {
-  //   "key": "alt+h",
+  //   "key": "ctrl+alt+h",
   //   "command": "workbench.action.decreaseViewWidth",
   //   "when": "vim.active && !terminalFocus"
   // },
   // {
-  //   "key": "alt+l",
+  //   "key": "ctrl+alt+l",
   //   "command": "workbench.action.increaseViewWidth",
   //   "when": "vim.active && !terminalFocus"
   // },
   {
-    "key": "alt+l",
+    "key": "ctrl+alt+h",
+    "command": "workbench.action.terminal.resizePaneLeft",
+    "when": "terminalFocus && vim.active"
+  },
+  {
+    "key": "ctrl+alt+l",
     "command": "workbench.action.decreaseViewSize",
     "when": "vim.active && sideBarFocus"
   },
   {
-    "key": "alt+h",
+    "key": "ctrl+alt+h",
     "command": "workbench.action.increaseViewSize",
     "when": "sideBarFocus && vim.active"
   },
   {
-    "key": "alt+h",
+    "key": "ctrl+alt+h",
     "command": "workbench.action.decreaseViewSize",
     "when": "vim.active && editorFocus"
   },
   {
-    "key": "alt+l",
+    "key": "ctrl+alt+l",
     "command": "workbench.action.increaseViewSize",
     "when": "editorFocus && vim.active"
   },
@@ -576,5 +576,164 @@
     "key": "alt+k",
     "command": "editor.action.moveLinesUpAction",
     "when": "editorTextFocus && !editorReadonly && vim.mode == 'Normal'",
+  },
+  {
+    "key": "alt+j",
+    "command": "notebook.cell.moveDown",
+    "when": "notebookEditorFocused && !inputFocus"
+  },
+  {
+    "key": "alt+k",
+    "command": "notebook.cell.moveUp",
+    "when": "notebookEditorFocused && !inputFocus"
+  },
+  {
+    "key": "z shift+a",
+    "command": "notebook.cell.collapseCellInput",
+    "when": "notebookCellListFocused && !inputFocus && !notebookCellInputIsCollapsed"
+  },
+  {
+    "key": "z a",
+    "command": "notebook.cell.collapseCellOutput",
+    "when": "notebookCellListFocused && !inputFocus && !notebookCellOutputIsCollapsed"
+  },
+  {
+    "key": "z shift+a",
+    "command": "notebook.cell.expandCellInput",
+    "when": "notebookCellInputIsCollapsed && notebookCellListFocused"
+  },
+  {
+    "key": "z a",
+    "command": "notebook.cell.expandCellOutput",
+    "when": "notebookCellListFocused && notebookCellOutputIsCollapsed"
+  },
+  {
+    "key": "z shift+m",
+    "command": "notebook.cell.collapseAllCellInputs",
+    "when": "notebookCellListFocused && !inputFocus"
+  },
+  {
+    "key": "z m",
+    "command": "notebook.cell.collapseAllCellOutputs",
+    "when": "notebookCellListFocused && !inputFocus"
+  },
+  {
+    "key": "z shift+r",
+    "command": "notebook.cell.expandAllCellInputs",
+    "when": "notebookCellListFocused && !inputFocus"
+  },
+  {
+    "key": "z r",
+    "command": "notebook.cell.expandAllCellOutputs",
+    "when": "notebookCellListFocused && !inputFocus"
+  },
+  {
+    "key": "ctrl+k ctrl+c",
+    "command": "-notebook.cell.collapseCellInput",
+    "when": "notebookCellListFocused && !inputFocus && !notebookCellInputIsCollapsed"
+  },
+  {
+    "key": "ctrl+k t",
+    "command": "-notebook.cell.collapseCellOutput",
+    "when": "notebookCellHasOutputs && notebookCellListFocused && !inputFocus && !notebookCellOutputIsCollapsed"
+  },
+  {
+    "key": "ctrl+k ctrl+c",
+    "command": "-notebook.cell.expandCellInput",
+    "when": "notebookCellInputIsCollapsed && notebookCellListFocused"
+  },
+  {
+    "key": "ctrl+k t",
+    "command": "-notebook.cell.expandCellOutput",
+    "when": "notebookCellListFocused && notebookCellOutputIsCollapsed"
+  },
+  {
+    "key": "z z",
+    "command": "notebook.centerActiveCell",
+    "when": "notebookEditorFocused"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "-notebook.centerActiveCell",
+    "when": "notebookEditorFocused"
+  },
+  {
+    "key": "y",
+    "command": "notebook.cell.changeToCode",
+    "when": "notebookEditorFocused && !inputFocus && !notebookOutputFocused && activeEditor == 'workbench.editor.notebook' && notebookCellType == 'markup' && !vim.active"
+  },
+  {
+    "key": "y",
+    "command": "-notebook.cell.changeToCode",
+    "when": "notebookEditorFocused && !inputFocus && !notebookOutputFocused && activeEditor == 'workbench.editor.notebook' && notebookCellType == 'markup'"
+  },
+  {
+    "key": "shift+o",
+    "command": "notebook.cell.insertCodeCellAbove",
+    "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused"
+  },
+  {
+    "key": "o",
+    "command": "notebook.cell.insertCodeCellBelow",
+    "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "notebook.cell.joinBelow",
+    "when": "notebookEditorFocused && !inputFocus"
+  },
+  {
+    "key": "alt+win+j",
+    "command": "-notebook.cell.joinBelow",
+    "when": "notebookEditorFocused"
+  },
+  {
+    "key": "ctrl+shift+enter",
+    "command": "notebook.cell.focusInOutput",
+    "when": "notebookCellHasOutputs && notebookEditorFocused && !inputFocus && vim.active"
+  },
+  {
+    "key": "z s",
+    "command": "notebook.cell.toggleOutputScrolling",
+    "when": "notebookCellHasOutputs && notebookCellListFocused && notebookOutputFocused && !inputFocus"
+  },
+  {
+    "key": "ctrl+shift+enter",
+    "command": "notebook.cell.insertCodeCellAbove",
+    "when": "notebookCellListFocused && !inputFocus && !vim.active"
+  },
+  {
+    "key": "ctrl+shift+enter",
+    "command": "-notebook.cell.insertCodeCellAbove",
+    "when": "notebookCellListFocused && !inputFocus"
+  },
+  {
+    "key": "ctrl+shift+j",
+    "command": "list.expandSelectionDown",
+    "when": "listFocus && listSupportsMultiselect && !inputFocus && vim.active"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "list.expandSelectionUp",
+    "when": "listFocus && listSupportsMultiselect && !inputFocus && vim.active"
+  },
+  {
+    "key": "shift+v",
+    "command": "list.selectAll",
+    "when": "listFocus && listSupportsMultiselect && !inputFocus && vim.active"
+  },
+  {
+    "key": "v",
+    "command": "list.toggleSelection",
+    "when": "listFocus && !inputFocus && vim.active"
+  },
+  {
+    "key": "alt+h",
+    "command": "git.viewFileHistory",
+    "when": "!vim.active"
+  },
+  {
+    "key": "alt+h",
+    "command": "-git.viewFileHistory"
   }
 ]
