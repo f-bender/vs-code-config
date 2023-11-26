@@ -761,4 +761,5 @@
     "**/.git": false
   },
   "editor.accessibilitySupport": "off",
+  "notebook.lineNumbers": "on",
 }

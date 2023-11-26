@@ -73,12 +73,12 @@
     "when": "editorTextFocus && !editorReadonly && vim.active"
   },
   {
-    "key": "alt+k",
+    "key": "ctrl+alt+k",
     "command": "editor.action.insertCursorAbove",
     "when": "editorTextFocus && vim.active"
   },
   {
-    "key": "alt+j",
+    "key": "ctrl+alt+j",
     "command": "editor.action.insertCursorBelow",
     "when": "editorTextFocus && vim.active"
   },
@@ -226,9 +226,9 @@
     "when": "editorHoverFocused && vim.active"
   },
   {
-    "key": "ctrl+l",
+    "key": "ctrl+shift+l",
     "command": "workbench.action.focusActiveEditorGroup",
-    "when": "!editorTextFocus"
+    "when": "terminalFocus || sideBarFocus"
   },
   {
     "key": "ctrl+j",
@@ -342,8 +342,9 @@
     "command": "-workbench.action.openSettings"
   },
   {
-    "key": "ctrl+shift+oem_comma",
-    "command": "workbench.action.toggleSidebarVisibility"
+    "key": "ctrl+oem_comma",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "filesExplorerFocus"
   },
   {
     "key": "ctrl+b",
@@ -352,11 +353,176 @@
   {
     "key": "ctrl+oem_comma",
     "command": "workbench.view.explorer",
-    "when": "viewContainer.workbench.view.explorer.enabled"
+    "when": "viewContainer.workbench.view.explorer.enabled && !filesExplorerFocus"
   },
   {
     "key": "ctrl+shift+e",
     "command": "-workbench.view.explorer",
     "when": "viewContainer.workbench.view.explorer.enabled"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "notebook.cell.quitEdit",
+    "when": "inputFocus && notebookEditorFocused && vim.active && !editorHasSelection && !editorHoverVisible && vim.mode == 'Normal'"
+  },
+  {
+    "key": "u",
+    "command": "undo",
+    "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused"
+  },
+  {
+    "key": "z",
+    "command": "-undo",
+    "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "redo",
+    "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "!editorTextFocus"
+  },
+  {
+    "key": "shift+j",
+    "command": "notebook.cell.executeCellAndBelow",
+    "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused"
+  },
+  {
+    "key": "shift+k",
+    "command": "notebook.cell.executeCellsAbove",
+    "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused"
+  },
+  {
+    "key": "shift+r",
+    "command": "jupyter.restartkernel",
+    "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused"
+  },
+  {
+    "key": "g t",
+    "command": "workbench.action.nextEditorInGroup",
+    "when": "vim.active && !inputFocus"
+  },
+  {
+    "key": "g shift+t",
+    "command": "workbench.action.previousEditorInGroup",
+    "when": "vim.active && !inputFocus"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.focusLeftGroup",
+    "when": "vim.active && !textCompareEditorActive"
+  },
+  {
+    "key": "y",
+    "command": "notebook.cell.copy",
+    "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused && vim.active"
+  },
+  {
+    "key": "c",
+    "command": "-notebook.cell.copy",
+    "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused"
+  },
+  {
+    "key": "y",
+    "command": "notebook.cell.copy",
+    "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused && !vim.active"
+  },
+  {
+    "key": "p",
+    "command": "notebook.cell.paste",
+    "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused && vim.active"
+  },
+  {
+    "key": "v",
+    "command": "notebook.cell.paste",
+    "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused && !vim.active"
+  },
+  {
+    "key": "v",
+    "command": "-notebook.cell.paste",
+    "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused"
+  },
+  {
+    "key": "d d",
+    "command": "-notebook.cell.delete",
+    "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused"
+  },
+  {
+    "key": "d",
+    "command": "notebook.cell.cut",
+    "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused"
+  },
+  {
+    "key": "x",
+    "command": "-notebook.cell.cut",
+    "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused"
+  },
+  {
+    "key": "shift+p",
+    "command": "notebook.cell.pasteAbove",
+    "when": "notebookEditorFocused && !inputFocus && vim.active"
+  },
+  {
+    "key": "ctrl+shift+v",
+    "command": "notebook.cell.pasteAbove",
+    "when": "notebookEditorFocused && !inputFocus && !vim.active"
+  },
+  {
+    "key": "ctrl+shift+v",
+    "command": "-notebook.cell.pasteAbove",
+    "when": "notebookEditorFocused && !inputFocus"
+  },
+  {
+    "key": "alt+h",
+    "command": "workbench.action.terminal.resizePaneLeft",
+    "when": "terminalFocus && vim.active"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.terminal.focusNextPane",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "alt+oem_3",
+    "command": "workbench.action.terminal.split",
+    "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
+  },
+  {
+    "key": "alt+l",
+    "command": "workbench.action.terminal.resizePaneRight",
+    "when": "terminalFocus && vim.active"
+  },
+  // {
+  //   "key": "alt+h",
+  //   "command": "workbench.action.decreaseViewWidth",
+  //   "when": "vim.active && !terminalFocus"
+  // },
+  // {
+  //   "key": "alt+l",
+  //   "command": "workbench.action.increaseViewWidth",
+  //   "when": "vim.active && !terminalFocus"
+  // },
+  {
+    "key": "alt+l",
+    "command": "workbench.action.decreaseViewSize",
+    "when": "vim.active && sideBarFocus"
+  },
+  {
+    "key": "alt+h",
+    "command": "workbench.action.increaseViewSize",
+    "when": "sideBarFocus && vim.active"
+  },
+  {
+    "key": "alt+h",
+    "command": "workbench.action.decreaseViewSize",
+    "when": "vim.active && editorFocus"
+  },
+  {
+    "key": "alt+l",
+    "command": "workbench.action.increaseViewSize",
+    "when": "editorFocus && vim.active"
   }
 ]
