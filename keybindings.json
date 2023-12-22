@@ -735,5 +735,34 @@
   {
     "key": "alt+h",
     "command": "-git.viewFileHistory"
+  },
+  {
+    "key": "ctrl+shift+n",
+    "command": "workbench.action.newWindow",
+    "when": "!filesExplorerFocus"
+  },
+  {
+    "key": "ctrl+shift+n",
+    "command": "-workbench.action.newWindow"
+  },
+  {
+    "key": "ctrl+shift+n",
+    "command": "explorer.newFolder",
+    "when": "filesExplorerFocus"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus"
+  },
+  {
+    "key": "ctrl+shift+c",
+    "command": "openInIntegratedTerminal",
+    "when": "vim.active && editorFocus"
+  },
+  {
+    "key": "alt+x",
+    "command": "rust-analyzer.run",
+    "when": "editorFocus && editorLangId == rust"
   }
 ]

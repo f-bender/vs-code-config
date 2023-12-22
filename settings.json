@@ -100,7 +100,7 @@
   "editor.formatOnSaveMode": "file",
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.organizeImports": true
+    "source.organizeImports": "always"
   },
   "editor.lineNumbers": "relative",
   "editor.cursorSurroundingLines": 8,
@@ -303,6 +303,18 @@
         "\"",
         "+",
         "y"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "<leader>",
+        "Y"
+      ],
+      "after": [
+        "\"",
+        "+",
+        "Y"
       ]
     },
     {
@@ -745,4 +757,9 @@
   },
   "editor.accessibilitySupport": "off",
   "notebook.lineNumbers": "on",
+  "editor.occurrencesHighlight": "multiFile",
+  "workbench.tree.enableStickyScroll": true,
+  "notebook.stickyScroll.enabled": true,
+  "editor.stickyScroll.enabled": true,
+  "terminal.integrated.stickyScroll.enabled": true,
 }
