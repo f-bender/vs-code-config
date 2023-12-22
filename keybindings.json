@@ -108,13 +108,39 @@
   },
   {
     "key": "ctrl+shift+j",
-    "command": "editor.action.dirtydiff.next",
-    "when": "editorTextFocus && !textCompareEditorActive"
+    "command": "runCommands",
+    "when": "editorTextFocus && !textCompareEditorActive",
+    "args": {
+      "commands": [
+        "editor.action.dirtydiff.next",
+        {
+          "command": "vim.remap",
+          "args": {
+            "after": [
+              "M",
+            ]
+          },
+        },
+      ]
+    }
   },
   {
     "key": "ctrl+shift+k",
-    "command": "editor.action.dirtydiff.previous",
-    "when": "editorTextFocus && !textCompareEditorActive"
+    "command": "runCommands",
+    "when": "editorTextFocus && !textCompareEditorActive",
+    "args": {
+      "commands": [
+        "editor.action.dirtydiff.previous",
+        {
+          "command": "vim.remap",
+          "args": {
+            "after": [
+              "M",
+            ]
+          },
+        },
+      ]
+    }
   },
   {
     "key": "ctrl+l",
@@ -353,7 +379,7 @@
   {
     "key": "ctrl+oem_comma",
     "command": "workbench.view.explorer",
-    "when": "viewContainer.workbench.view.explorer.enabled && !filesExplorerFocus"
+    "when": "sideBarFocus && viewContainer.workbench.view.explorer.enabled && !filesExplorerFocus || viewContainer.workbench.view.explorer.enabled && !sideBarVisible"
   },
   {
     "key": "ctrl+shift+e",
@@ -600,12 +626,12 @@
   {
     "key": "z shift+a",
     "command": "notebook.cell.expandCellInput",
-    "when": "notebookCellInputIsCollapsed && notebookCellListFocused"
+    "when": "notebookCellInputIsCollapsed && notebookCellListFocused && !inputFocus"
   },
   {
     "key": "z a",
     "command": "notebook.cell.expandCellOutput",
-    "when": "notebookCellListFocused && notebookCellOutputIsCollapsed"
+    "when": "notebookCellListFocused && notebookCellOutputIsCollapsed && !inputFocus"
   },
   {
     "key": "z shift+m",
@@ -650,7 +676,7 @@
   {
     "key": "z z",
     "command": "notebook.centerActiveCell",
-    "when": "notebookEditorFocused"
+    "when": "notebookCellListFocused && !inputFocus"
   },
   {
     "key": "ctrl+l",
@@ -658,9 +684,9 @@
     "when": "notebookEditorFocused"
   },
   {
-    "key": "y",
+    "key": "m",
     "command": "notebook.cell.changeToCode",
-    "when": "notebookEditorFocused && !inputFocus && !notebookOutputFocused && activeEditor == 'workbench.editor.notebook' && notebookCellType == 'markup' && !vim.active"
+    "when": "notebookEditorFocused && !inputFocus && !notebookOutputFocused && activeEditor == 'workbench.editor.notebook' && notebookCellType == 'markup'"
   },
   {
     "key": "y",
@@ -678,9 +704,9 @@
     "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused"
   },
   {
-    "key": "ctrl+j",
+    "key": "oem_minus",
     "command": "notebook.cell.joinBelow",
-    "when": "notebookEditorFocused && !inputFocus"
+    "when": "notebookEditorFocused && !inQuickOpen && !inputFocus"
   },
   {
     "key": "alt+win+j",
@@ -737,6 +763,71 @@
     "command": "-git.viewFileHistory"
   },
   {
+    "key": "ctrl+shift+oem_1",
+    "command": "toggle.diff.renderSideBySide",
+    "when": "textCompareEditorVisible"
+  },
+  {
+    "key": "ctrl+oem_1",
+    "command": "git.openChange",
+    "when": "editorFocus && !isInDiffEditor"
+  },
+  {
+    "key": "ctrl+oem_1",
+    "command": "git.openFile",
+    "when": "editorFocus && isInDiffEditor"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "editor.action.deleteLines",
+    "when": "textInputFocus && !editorReadonly && !vim.active"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "-editor.action.deleteLines",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+j",
+    "command": "workbench.action.compareEditor.nextChange",
+    "when": "textCompareEditorActive && textCompareEditorVisible && !terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "workbench.action.compareEditor.previousChange",
+    "when": "textCompareEditorActive && textCompareEditorVisible && !terminalFocus"
+  },
+  {
+    "key": "ctrl+alt+j",
+    "command": "workbench.action.terminal.resizePaneDown",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+alt+k",
+    "command": "workbench.action.terminal.resizePaneUp",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus"
+  },
+  {
+    "key": "i",
+    "command": "notebook.cell.edit",
+    "when": "notebookCellListFocused && notebookEditable && !editorHoverFocused && !inputFocus"
+  },
+  {
+    "key": "ctrl+oem_comma",
+    "command": "workbench.action.focusSideBar",
+    "when": "sideBarVisible && !sideBarFocus"
+  },
+  {
+    "key": "shift+z shift+z",
+    "command": "workbench.action.closeActiveEditor",
+    "when": "!inputFocus"
+  },
+  {
     "key": "ctrl+shift+n",
     "command": "workbench.action.newWindow",
     "when": "!filesExplorerFocus"
@@ -748,11 +839,6 @@
   {
     "key": "ctrl+shift+n",
     "command": "explorer.newFolder",
-    "when": "filesExplorerFocus"
-  },
-  {
-    "key": "ctrl+n",
-    "command": "explorer.newFile",
     "when": "filesExplorerFocus"
   },
   {
