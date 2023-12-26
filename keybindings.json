@@ -109,7 +109,7 @@
   {
     "key": "ctrl+shift+j",
     "command": "runCommands",
-    "when": "editorTextFocus && !textCompareEditorActive",
+    "when": "editorTextFocus && !textCompareEditorActive && vim.mode == 'Normal'",
     "args": {
       "commands": [
         "editor.action.dirtydiff.next",
@@ -127,7 +127,7 @@
   {
     "key": "ctrl+shift+k",
     "command": "runCommands",
-    "when": "editorTextFocus && !textCompareEditorActive",
+    "when": "editorTextFocus && !textCompareEditorActive && vim.mode == 'Normal'",
     "args": {
       "commands": [
         "editor.action.dirtydiff.previous",
@@ -219,7 +219,7 @@
   {
     "key": "ctrl+m",
     "command": "editor.action.showHover",
-    "when": "editorTextFocus && vim.active && vim.mode != 'SearchInProgressMode'"
+    "when": "editorTextFocus && vim.active && vim.mode != 'SearchInProgressMode' && !suggestWidgetVisible"
   },
   {
     "key": "j",
@@ -850,5 +850,30 @@
     "key": "alt+x",
     "command": "rust-analyzer.run",
     "when": "editorFocus && editorLangId == rust"
+  },
+  {
+    "key": "g g",
+    "command": "editor.action.goToTopHover",
+    "when": "editorHoverFocused && vim.active"
+  },
+  {
+    "key": "shift+g",
+    "command": "editor.action.goToBottomHover",
+    "when": "editorHoverFocused && vim.active"
+  },
+  {
+    "key": "ctrl+m",
+    "command": "toggleSuggestionFocus",
+    "when": "suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "selectPrevPageSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+  },
+  {
+    "key": "ctrl+shift+j",
+    "command": "selectNextPageSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
   }
 ]
