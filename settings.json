@@ -29,7 +29,6 @@
     "default": "right",
     "jupyter-notebook": "left"
   },
-  "workbench.editor.wrapTabs": true,
   "redhat.telemetry.enabled": false,
   "jupyter.askForKernelRestart": false,
   "terminal.integrated.defaultProfile.windows": "PowerShell",
@@ -762,4 +761,9 @@
   "notebook.stickyScroll.enabled": true,
   "editor.stickyScroll.enabled": true,
   "terminal.integrated.stickyScroll.enabled": true,
+  "files.autoSaveWorkspaceFilesOnly": true,
+  "zenMode.hideLineNumbers": false,
+  "zenMode.showTabs": "none",
+  "zenMode.hideStatusBar": false,
+  "diffEditor.renderSideBySide": false,
 }

@@ -1,4 +1,10 @@
 // Place your key bindings in this file to override the defaultsauto[]
+//
+//* Triggering of keybindings can be monitored using the "Developer: Toggle Keyboard Shortcuts Troubleshooting" command.
+//
+//* "when clause contexts" ("when"-conditions) can be debugged using the "Developer: Inspect Context Keys" command,
+//* which outputs the current context keys to the Developer Console, which can be activated using the "Developer: Toggle Developer Tools" command.
+//* See https://code.visualstudio.com/api/references/when-clause-contexts
 [
   {
     "key": "ctrl+shift+c",
@@ -409,7 +415,7 @@
   {
     "key": "ctrl+l",
     "command": "workbench.action.focusActiveEditorGroup",
-    "when": "!editorTextFocus"
+    "when": "!editorTextFocus || panelFocus"
   },
   {
     "key": "shift+j",
@@ -435,11 +441,6 @@
     "key": "g shift+t",
     "command": "workbench.action.previousEditorInGroup",
     "when": "vim.active && !inputFocus"
-  },
-  {
-    "key": "ctrl+h",
-    "command": "workbench.action.focusLeftGroup",
-    "when": "vim.active && !textCompareEditorActive"
   },
   {
     "key": "y",
@@ -875,5 +876,49 @@
     "key": "ctrl+shift+j",
     "command": "selectNextPageSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
-  }
+  },
+  {
+    "key": "ctrl+f4",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "shift+alt+n",
+    "command": "workbench.action.terminal.moveIntoNewWindow"
+  },
+  {
+    "key": "alt+n",
+    "command": "workbench.action.moveEditorToNewWindow",
+    "when": "!isAuxiliaryWindowFocusedContext"
+  },
+  {
+    "key": "alt+n",
+    "command": "workbench.action.restoreEditorsToMainWindow",
+    "when": "isAuxiliaryWindowFocusedContext"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "history.showPrevious",
+    "when": "historyNavigationBackwardsEnabled && historyNavigationWidgetFocus && !isComposing && !suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "history.showNext",
+    "when": "historyNavigationForwardsEnabled && historyNavigationWidgetFocus && !isComposing && !suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "extension.vim_ctrl+c",
+    "when": "editorTextFocus && vim.active && vim.overrideCtrlC && vim.use<C-c> && !inDebugRepl && !panelFocus"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "-extension.vim_ctrl+c",
+    "when": "editorTextFocus && vim.active && vim.overrideCtrlC && vim.use<C-c> && !inDebugRepl"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.focusPreviousGroup",
+    "when": "vim.active && !textCompareEditorActive"
+  },
 ]
