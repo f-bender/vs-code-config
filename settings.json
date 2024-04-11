@@ -47,8 +47,12 @@
     "editor.defaultFormatter": "NikolaosGeorgiou.html-fmt-vscode"
   },
   "[python]": {
-    "editor.formatOnType": true,
-    "editor.defaultFormatter": "ms-python.black-formatter" // old: "mikoz.black-py"
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    },
+    "editor.defaultFormatter": "charliermarsh.ruff"
   },
   "yaml.customTags": [
     "!And",
@@ -518,6 +522,36 @@
         "C"
       ]
     },
+    {
+      "before": [
+        "G"
+      ],
+      "after": [
+        "G",
+        "z",
+        "z"
+      ]
+    },
+    {
+      "before": [
+        "*"
+      ],
+      "after": [
+        "*",
+        "z",
+        "z"
+      ]
+    },
+    {
+      "before": [
+        "#"
+      ],
+      "after": [
+        "#",
+        "z",
+        "z"
+      ]
+    },
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
@@ -710,6 +744,76 @@
         "<CR>"
       ]
     },
+    {
+      "before": [
+        "<C-u>"
+      ],
+      "after": [
+        "<C-u>",
+        "z",
+        "z"
+      ]
+    },
+    {
+      "before": [
+        "<C-d>"
+      ],
+      "after": [
+        "<C-d>",
+        "z",
+        "z"
+      ]
+    },
+    {
+      "before": [
+        "G"
+      ],
+      "after": [
+        "G",
+        "z",
+        "z"
+      ]
+    },
+    {
+      "before": [
+        "*"
+      ],
+      "after": [
+        "*",
+        "z",
+        "z"
+      ]
+    },
+    {
+      "before": [
+        "#"
+      ],
+      "after": [
+        "#",
+        "z",
+        "z"
+      ]
+    },
+    {
+      "before": [
+        "n"
+      ],
+      "after": [
+        "n",
+        "z",
+        "z"
+      ],
+    },
+    {
+      "before": [
+        "N"
+      ],
+      "after": [
+        "N",
+        "z",
+        "z"
+      ],
+    },
   ],
   "vim.insertModeKeyBindingsNonRecursive": [
     {
@@ -751,19 +855,26 @@
   "vim.leader": " ",
   "workbench.sideBar.location": "right",
   "workbench.panel.defaultLocation": "right",
-  "files.exclude": {
-    "**/.git": false
-  },
   "editor.accessibilitySupport": "off",
   "notebook.lineNumbers": "on",
   "editor.occurrencesHighlight": "multiFile",
   "workbench.tree.enableStickyScroll": true,
   "notebook.stickyScroll.enabled": true,
   "editor.stickyScroll.enabled": true,
-  "terminal.integrated.stickyScroll.enabled": true,
-  "files.autoSaveWorkspaceFilesOnly": true,
-  "zenMode.hideLineNumbers": false,
+  "gitlens.keymap": "alternate",
+  "editor.mouseWheelZoom": true,
   "zenMode.showTabs": "none",
+  "zenMode.hideLineNumbers": false,
+  "terminal.integrated.tabs.hideCondition": "singleGroup",
+  "gitlens.blame.format": "${author|40} ${message|60?} ${agoOrDate|14-}",
+  "gitlens.blame.toggleMode": "window",
+  "diffEditor.experimental.showMoves": true,
   "zenMode.hideStatusBar": false,
+  "git.terminalGitEditor": true,
+  "debug.openDebug": "neverOpen",
+  "workbench.activityBar.location": "top",
+  "diffEditor.renderGutterMenu": false,
+  "terminal.integrated.stickyScroll.enabled": true,
+  "terminal.integrated.experimentalInlineChat": true,
   "diffEditor.renderSideBySide": false,
 }
