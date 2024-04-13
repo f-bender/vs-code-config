@@ -815,11 +815,6 @@
   },
   {
     "key": "ctrl+shift+n",
-    "command": "workbench.action.newWindow",
-    "when": "!filesExplorerFocus"
-  },
-  {
-    "key": "ctrl+shift+n",
     "command": "-workbench.action.newWindow"
   },
   {
@@ -868,18 +863,19 @@
     "when": "terminalFocus"
   },
   {
-    "key": "shift+alt+n",
-    "command": "workbench.action.terminal.moveIntoNewWindow"
+    "key": "ctrl+shift+n",
+    "command": "workbench.action.terminal.moveIntoNewWindow",
+    "when": "panelFocus && terminalFocus"
   },
   {
-    "key": "alt+n",
+    "key": "ctrl+shift+n",
     "command": "workbench.action.moveEditorToNewWindow",
-    "when": "!isAuxiliaryWindowFocusedContext"
+    "when": "!isAuxiliaryWindowFocusedContext && !sideBarFocus && !terminalFocus"
   },
   {
-    "key": "alt+n",
+    "key": "ctrl+shift+n",
     "command": "workbench.action.restoreEditorsToMainWindow",
-    "when": "isAuxiliaryWindowFocusedContext"
+    "when": "isAuxiliaryWindowFocusedContext && !terminalFocus && !sideBarFocus"
   },
   {
     "key": "ctrl+c",
@@ -937,7 +933,7 @@
     "when": "terminalFocus"
   },
   {
-    "key": "ctrl+shift+m n",
+    "key": "ctrl+shift+m ctrl+shift+n",
     "command": "workbench.action.openChat.copilot"
   },
   {
@@ -1023,10 +1019,6 @@
     "key": "ctrl+oem_minus",
     "command": "editor.action.fontZoomOut",
     "when": "editorFocus"
-  },
-  {
-    "key": "ctrl+shift+m ctrl+shift+n",
-    "command": "workbench.action.chat.copilot.openInWindow"
   },
   {
     "key": "ctrl+o",
@@ -1342,5 +1334,10 @@
   {
     "key": "ctrl+shift+7",
     "command": "workbench.action.experimental.quickTextSearch"
+  },
+  {
+    "key": "ctrl+shift+n",
+    "command": "workbench.action.terminal.moveToTerminalPanel",
+    "when": "terminalFocus && !panelFocus"
   }
 ]
