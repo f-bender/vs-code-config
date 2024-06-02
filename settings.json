@@ -1,4 +1,67 @@
 {
+  "cSpell.userWords": [
+    "aimet",
+    "astype",
+    "behaviour",
+    "bfill",
+    "coret",
+    "dateutil",
+    "DCGM",
+    "dcid",
+    "dropna",
+    "fillna",
+    "hrefs",
+    "Iframe",
+    "iloc",
+    "ipynb",
+    "iterrows",
+    "jsdelivr",
+    "kpis",
+    "mddump",
+    "mypy",
+    "nlevels",
+    "paramtype",
+    "Plotly",
+    "pydantic",
+    "pyenv",
+    "pytest",
+    "reraised",
+    "responsibles",
+    "rtype",
+    "runid",
+    "semseg",
+    "spinup",
+    "topk",
+    "tqdm",
+    "uids",
+    "unstage",
+    "vdeep",
+    "venv",
+    "vsintellicode",
+    "wsid",
+    "xaxis"
+  ],
+  // * in case we want to disallow compound words, exceptions must be included manually:
+  // "cSpell.userWords": [
+  //   "codeowners",
+  //   "isoparse",
+  //   "readall",
+  //   "maxsplit",
+  //   "usecase",
+  //   "subpages",
+  //   "argparser",
+  //   "usecases",
+  //   "dataframe",
+  //   "subcollection",
+  //   "Dockerizing",
+  //   "dockerized",
+  //   "datamanagement",
+  //   "diskcache",
+  //   "substeps",
+  //   "applymap",
+  //   "preprocessors",
+  //   "justseen",
+  // ],
   "[yaml]": {
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
@@ -44,7 +107,7 @@
   },
   "editor.wordWrapColumn": 120,
   "[html]": {
-    "editor.defaultFormatter": "NikolaosGeorgiou.html-fmt-vscode"
+    "editor.defaultFormatter": "vscode.html-language-features"
   },
   "[python]": {
     "editor.formatOnSave": true,
@@ -148,7 +211,7 @@
     //     }
     //   ]
     // },
-    // // Likeweise, this would rebind Ctrl+R to VS Code's redo
+    // // Likewise, this would rebind Ctrl+R to VS Code's redo
     // {
     //   "before": [
     //     "<C-r>"
@@ -552,6 +615,66 @@
         "z"
       ]
     },
+    {
+      "before": [
+        "g",
+        "h",
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "editor.showCallHierarchy",
+        },
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "H",
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "editor.showTypeHierarchy",
+        },
+      ]
+    },
+    {
+      "before": [
+        "H",
+      ],
+      "after": [
+        "L",
+        "H",
+      ],
+    },
+    {
+      "before": [
+        "L",
+      ],
+      "after": [
+        "H",
+        "L",
+      ],
+    },
+    {
+      "before": [
+        "<C-j>",
+      ],
+      "after": [
+        "g",
+        "j",
+      ],
+    },
+    {
+      "before": [
+        "<C-k>",
+      ],
+      "after": [
+        "g",
+        "k",
+      ],
+    },
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
@@ -814,6 +937,42 @@
         "z"
       ],
     },
+    {
+      "before": [
+        "H",
+      ],
+      "after": [
+        "L",
+        "H",
+      ],
+    },
+    {
+      "before": [
+        "L",
+      ],
+      "after": [
+        "H",
+        "L",
+      ],
+    },
+    {
+      "before": [
+        "<C-j>",
+      ],
+      "after": [
+        "g",
+        "j",
+      ],
+    },
+    {
+      "before": [
+        "<C-k>",
+      ],
+      "after": [
+        "g",
+        "k",
+      ],
+    },
   ],
   "vim.insertModeKeyBindingsNonRecursive": [
     {
@@ -849,14 +1008,10 @@
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "black-formatter.args": [
-    "--line-length=120"
-  ],
   "vim.leader": " ",
   "workbench.sideBar.location": "right",
   "workbench.panel.defaultLocation": "right",
   "editor.accessibilitySupport": "off",
-  "notebook.lineNumbers": "on",
   "editor.occurrencesHighlight": "multiFile",
   "workbench.tree.enableStickyScroll": true,
   "notebook.stickyScroll.enabled": true,
@@ -870,17 +1025,28 @@
   "gitlens.blame.toggleMode": "window",
   "diffEditor.experimental.showMoves": true,
   "zenMode.hideStatusBar": false,
-  "git.terminalGitEditor": true,
   "debug.openDebug": "neverOpen",
   "workbench.activityBar.location": "top",
   "diffEditor.renderGutterMenu": false,
-  "terminal.integrated.stickyScroll.enabled": true,
-  "terminal.integrated.experimentalInlineChat": true,
-  "diffEditor.renderSideBySide": false,
   "vim.visualstar": true,
   "vim.highlightedyank.enable": true,
   "vim.gdefault": true,
   "vim.textwidth": 120,
   "vim.sneakReplacesF": true,
   "vim.easymotion": true,
+  "notebook.lineNumbers": "on",
+  "markdownlint.config": {
+    "MD038": false
+  },
+  "diffEditor.renderSideBySide": true,
+  "python.analysis.inlayHints.pytestParameters": true,
+  "cSpell.allowCompoundWords": true,
+  "githubPullRequests.fileListLayout": "flat",
+  "vim.camelCaseMotion.enable": true,
+  "terminal.integrated.commandsToSkipShell": [
+    "workbench.action.toggleCenteredLayout"
+  ],
+  "github.copilot.editor.enableAutoCompletions": true,
+  "workbench.editor.wrapTabs": true,
+  "vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjfö-",
 }
