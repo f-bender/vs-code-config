@@ -1,4 +1,7 @@
 {
+  // Amazon Q / Code Whisperer
+  "amazonQ.shareContentWithAWS": false,
+  // General
   "cSpell.userWords": [
     "aimet",
     "astype",

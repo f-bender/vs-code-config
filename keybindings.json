@@ -6,6 +6,58 @@
 //* which outputs the current context keys to the Developer Console, which can be activated using the "Developer: Toggle Developer Tools" command.
 //* See https://code.visualstudio.com/api/references/when-clause-contexts
 [
+  // Amazon Q / Code Whisperer
+  {
+    "key": "ctrl+enter",
+    "command": "aws.amazonq.invokeInlineCompletion",
+    "when": "aws.codewhisperer.connected && editorTextFocus"
+  },
+  {
+    "key": "alt+c",
+    "command": "-aws.amazonq.invokeInlineCompletion",
+    "when": "aws.codewhisperer.connected && editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+m e",
+    "command": "aws.amazonq.explainCode"
+  },
+  {
+    "key": "alt+win+e",
+    "command": "-aws.amazonq.explainCode"
+  },
+  {
+    "key": "ctrl+shift+m f",
+    "command": "aws.amazonq.fixCode"
+  },
+  {
+    "key": "alt+win+y",
+    "command": "-aws.amazonq.fixCode"
+  },
+  {
+    "key": "ctrl+shift+m o",
+    "command": "aws.amazonq.optimizeCode"
+  },
+  {
+    "key": "alt+win+a",
+    "command": "-aws.amazonq.optimizeCode"
+  },
+  {
+    "key": "ctrl+shift+m r",
+    "command": "aws.amazonq.refactorCode"
+  },
+  {
+    "key": "alt+win+u",
+    "command": "-aws.amazonq.refactorCode"
+  },
+  {
+    "key": "ctrl+shift+m p",
+    "command": "aws.amazonq.sendToPrompt"
+  },
+  {
+    "key": "alt+win+q",
+    "command": "-aws.amazonq.sendToPrompt"
+  },
+  // General
   {
     "key": "ctrl+shift+c",
     "command": "-workbench.action.terminal.openNativeConsole",
