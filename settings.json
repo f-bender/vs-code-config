@@ -1052,4 +1052,5 @@
   "github.copilot.editor.enableAutoCompletions": true,
   "workbench.editor.wrapTabs": true,
   "vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjfö-",
+  "vim.useSystemClipboard": true,
 }
