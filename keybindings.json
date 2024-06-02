@@ -331,16 +331,6 @@
     "command": "-workbench.action.quickOpen" // to allow Ctrl + E for going to end of the line in bash
   },
   {
-    "key": "alt+o",
-    "command": "cursorUndo",
-    "when": "textInputFocus && vim.active"
-  },
-  {
-    "key": "alt+i",
-    "command": "cursorRedo",
-    "when": "vim.active"
-  },
-  {
     "key": "ctrl+7",
     "command": "workbench.action.terminal.focusFind",
     "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported && vim.active"
@@ -823,9 +813,9 @@
     "when": "filesExplorerFocus"
   },
   {
-    "key": "ctrl+shift+c",
+    "key": "ctrl+alt+c",
     "command": "openInIntegratedTerminal",
-    "when": "vim.active && editorFocus"
+    "when": "editorFocus && vim.active"
   },
   {
     "key": "alt+x",
@@ -928,15 +918,6 @@
     "when": "editorFocus"
   },
   {
-    "key": "ctrl+shift+m e",
-    "command": "github.copilot.terminal.explainTerminalSelectionContextMenu",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "ctrl+shift+m ctrl+shift+n",
-    "command": "workbench.action.openChat.copilot"
-  },
-  {
     "key": "ctrl+shift+m s",
     "command": "workbench.panel.chat.view.copilot.focus"
   },
@@ -1021,16 +1002,6 @@
     "when": "editorFocus"
   },
   {
-    "key": "ctrl+o",
-    "command": "workbench.action.navigateBack",
-    "when": "canNavigateBack && !editorFocus && vim.active"
-  },
-  {
-    "key": "ctrl+i",
-    "command": "workbench.action.navigateForward",
-    "when": "canNavigateForward && vim.active && !editorFocus"
-  },
-  {
     "key": "ctrl+shift+p",
     "command": "workbench.action.quickOpenNavigatePreviousInFilePicker",
     "when": "inFilesPicker && inQuickOpen && !vim.active"
@@ -1080,11 +1051,6 @@
     "when": "!inputFocus"
   },
   {
-    "key": "ctrl+shift+m ctrl+shift+m",
-    "command": "github.copilot.terminal.suggestCommand",
-    "when": "terminalFocus"
-  },
-  {
     "key": "ctrl+oem_comma",
     "command": "workbench.action.toggleSidebarVisibility",
     "when": "filesExplorerFocus"
@@ -1123,17 +1089,12 @@
   {
     "key": "ctrl+shift+u",
     "command": "workbench.action.output.toggleOutput",
-    "when": "workbench.panel.output.active && !vim.active"
+    "when": "workbench.panel.output.active"
   },
   {
     "key": "ctrl+shift+u",
     "command": "-workbench.action.output.toggleOutput",
     "when": "workbench.panel.output.active"
-  },
-  {
-    "key": "ctrl+shift+u",
-    "command": "git.unstageSelectedRanges",
-    "when": "editorTextFocus"
   },
   {
     "key": "ctrl+oem_1",
@@ -1187,7 +1148,8 @@
           "command": "vim.remap",
           "args": {
             "after": [
-              "M",
+              "H",
+              "L",
             ]
           },
         },
@@ -1205,7 +1167,8 @@
           "command": "vim.remap",
           "args": {
             "after": [
-              "M",
+              "L",
+              "H",
             ]
           },
         },
@@ -1230,16 +1193,6 @@
     "key": "ctrl+p",
     "command": "history.showPrevious",
     "when": "historyNavigationWidgetFocus && !isComposing && !suggestWidgetVisible && (historyNavigationBackwardsEnabled || inChat)"
-  },
-  {
-    "key": "ctrl+l",
-    "command": "extension.vim_navigateCtrlL",
-    "when": "editorTextFocus && vim.active && vim.use<C-l> && !inDebugRepl && !panelFocus"
-  },
-  {
-    "key": "ctrl+l",
-    "command": "-extension.vim_navigateCtrlL",
-    "when": "editorTextFocus && vim.active && vim.use<C-l> && !inDebugRepl"
   },
   {
     "key": "ctrl+l",
@@ -1323,7 +1276,7 @@
     "when": "terminalFocus"
   },
   {
-    "key": "ctrl+alt+c",
+    "key": "ctrl+shift+c",
     "command": "workbench.panel.comments"
   },
   {
@@ -1333,7 +1286,7 @@
   },
   {
     "key": "ctrl+shift+7",
-    "command": "workbench.action.experimental.quickTextSearch"
+    "command": "workbench.action.quickTextSearch"
   },
   {
     "key": "ctrl+shift+n",
@@ -1341,13 +1294,236 @@
     "when": "terminalFocus && !panelFocus"
   },
   {
-    "key": "ctrl+alt+o",
-    "command": "workbench.action.files.openFile",
-    "when": "true"
+    "key": "ctrl+l",
+    "command": "notebook.cell.quitEdit",
+    "when": "inputFocus && notebookEditorFocused && vim.active && !editorHasSelection && !editorHoverVisible && vim.mode == 'Normal'"
   },
   {
-    "key": "ctrl+o",
-    "command": "-workbench.action.files.openFile",
-    "when": "true"
-  }
+    "key": "shift+f4",
+    "command": "workbench.action.closeEditorsInGroup"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "focusNextRenameSuggestion",
+    "when": "renameInputVisible"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "focusPreviousRenameSuggestion",
+    "when": "renameInputVisible"
+  },
+  {
+    "key": "ctrl+shift+m ctrl+shift+m",
+    "command": "workbench.action.terminal.chat.start",
+    "when": "inlineChatHasProvider && terminalFocusInAny && terminalHasBeenCreated || inlineChatHasProvider && terminalFocusInAny && terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "-workbench.action.terminal.chat.start",
+    "when": "inlineChatHasProvider && terminalFocusInAny && terminalHasBeenCreated || inlineChatHasProvider && terminalFocusInAny && terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.terminal.chat.close",
+    "when": "terminalChatFocus && terminalChatVisible"
+  },
+  {
+    "key": "ctrl+shift+m e",
+    "command": "github.copilot.terminal.explainTerminalLastCommand",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+m ctrl+shift+n",
+    "command": "workbench.action.chat.openInEditor"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "search.action.replace",
+    "when": "isEditableItem && matchFocus && replaceActive && searchViewletVisible"
+  },
+  {
+    "key": "ctrl+shift+1",
+    "command": "-search.action.replace",
+    "when": "isEditableItem && matchFocus && replaceActive && searchViewletVisible"
+  },
+  {
+    "key": "ctrl+alt+oem_1",
+    "command": "gitlens.diffWithRevision"
+  },
+  {
+    "key": "ctrl+alt+p",
+    "command": "gitlens.openFileRevision"
+  },
+  {
+    "key": "alt+oem_2",
+    "command": "gitlens.gitCommands",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "alt+oem_2",
+    "command": "gitlens.gitCommands",
+    "when": "!gitlens:disabled && config.gitlens.keymap == 'alternate'"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "editor.closeTypeHierarchy",
+    "when": "typeHierarchyVisible && !config.editor.stablePeek"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "editor.closeCallHierarchy",
+    "when": "callHierarchyVisible && !config.editor.stablePeek"
+  },
+  {
+    "key": "g h",
+    "command": "editor.showIncomingCalls",
+    "when": "callHierarchyVisible && callHierarchyDirection == 'outgoingCalls'"
+  },
+  {
+    "key": "g h",
+    "command": "editor.showOutgoingCalls",
+    "when": "callHierarchyVisible && callHierarchyDirection == 'incomingCalls'"
+  },
+  {
+    "key": "g h",
+    "command": "editor.showSubtypes",
+    "when": "typeHierarchyVisible && typeHierarchyDirection == 'supertypes'"
+  },
+  {
+    "key": "g h",
+    "command": "editor.showSupertypes",
+    "when": "typeHierarchyVisible && typeHierarchyDirection == 'subtypes'"
+  },
+  {
+    "key": "ctrl+f4",
+    "command": "workbench.action.terminal.killEditor",
+    "when": "terminalEditorFocus && terminalFocus && terminalHasBeenCreated || terminalEditorFocus && terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.terminal.killEditor",
+    "when": "terminalEditorFocus && terminalFocus && terminalHasBeenCreated || terminalEditorFocus && terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.closeActiveEditor"
+  },
+  {
+    "key": "ctrl+f4",
+    "command": "workbench.action.closeGroup",
+    "when": "activeEditorGroupEmpty && multipleEditorGroups"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.closeGroup",
+    "when": "activeEditorGroupEmpty && multipleEditorGroups"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "vim.remap",
+    "when": "vim.mode == 'EasyMotionMode' || vim.mode == 'EasyMotionInputMode'",
+    "args": {
+      "after": [
+        "<Esc>",
+      ]
+    }
+  },
+  {
+    "key": "ctrl+l",
+    "command": "extension.vim_navigateCtrlL",
+    "when": "!panelFocus && editorTextFocus && vim.active && vim.use<C-l> && !inDebugRepl && vim.mode != 'EasyMotionMode' && vim.mode != 'EasyMotionInputMode'"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "-extension.vim_navigateCtrlL",
+    "when": "editorTextFocus && vim.active && vim.use<C-l> && !inDebugRepl"
+  },
+  {
+    "key": "ctrl+shift+z",
+    "command": "workbench.action.toggleZenMode",
+    "when": "!isAuxiliaryWindowFocusedContext"
+  },
+  {
+    "key": "ctrl+k z",
+    "command": "-workbench.action.toggleZenMode",
+    "when": "!isAuxiliaryWindowFocusedContext"
+  },
+  {
+    "key": "alt+z",
+    "command": "workbench.action.toggleCenteredLayout"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "search.action.cancel",
+    "when": "listFocus && searchViewletVisible && !inputFocus && !treestickyScrollFocused && searchState != '0'"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "closeFindWidget",
+    "when": "editorFocus && findWidgetVisible && !isComposing"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "comments.reply",
+    "when": "focusedView == 'workbench.panel.comments'"
+  },
+  {
+    "key": "ctrl+alt+d",
+    "command": "workbench.action.addComment"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.hideComment",
+    "when": "commentEditorFocused && vim.mode == 'Normal'"
+  },
+  {
+    "key": "ctrl+shift+alt+c",
+    "command": "workbench.action.toggleCommenting"
+  },
+  // doesn't seem to work, but I'll keep it in in case it starts working at some point
+  {
+    "key": "ctrl+alt+u",
+    "command": "git.unstageSelectedRanges",
+    "when": "editorTextFocus"
+  },
+  // VSCode's forward/backward navigation using Alt+I/O (Vim's one is still Ctrl + I/O and usually better)
+  {
+    "key": "alt+o",
+    "command": "workbench.action.navigateBack",
+    "when": "canNavigateBack && vim.active"
+  },
+  {
+    "key": "alt+i",
+    "command": "workbench.action.navigateForward",
+    "when": "canNavigateForward && vim.active"
+  },
+  // this is an inferior alternative to <C-u>/<C-d> which also works when some code is folded
+  {
+    "key": "shift+alt+u",
+    "command": "vim.remap",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || vim.mode == 'Visual' || vim.mode == 'VisualLine')",
+    "args": {
+      "after": [
+        "H",
+        "z",
+        "z",
+      ]
+    }
+  },
+  {
+    "key": "shift+alt+d",
+    "command": "vim.remap",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || vim.mode == 'Visual' || vim.mode == 'VisualLine')",
+    "args": {
+      "after": [
+        "L",
+        "z",
+        "z",
+      ]
+    }
+  },
+  {
+    "key": "shift+alt+oem_1",
+    "command": "git.viewStagedChanges"
+  },
 ]
