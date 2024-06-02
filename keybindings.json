@@ -1339,5 +1339,15 @@
     "key": "ctrl+shift+n",
     "command": "workbench.action.terminal.moveToTerminalPanel",
     "when": "terminalFocus && !panelFocus"
+  },
+  {
+    "key": "ctrl+alt+o",
+    "command": "workbench.action.files.openFile",
+    "when": "true"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "-workbench.action.files.openFile",
+    "when": "true"
   }
 ]
