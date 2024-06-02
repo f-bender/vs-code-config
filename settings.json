@@ -678,6 +678,14 @@
         "k",
       ],
     },
+    {
+      "before": [
+        "<C-n>"
+      ],
+      "commands": [
+        ":nohl"
+      ]
+    }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
@@ -1053,4 +1061,5 @@
   "workbench.editor.wrapTabs": true,
   "vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjfö-",
   "vim.useSystemClipboard": true,
+  "vim.hlsearch": true,
 }
