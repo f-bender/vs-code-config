@@ -57,6 +57,10 @@
     "key": "alt+win+q",
     "command": "-aws.amazonq.sendToPrompt"
   },
+  {
+    "key": "ctrl+shift+m s",
+    "command": "aws.AmazonQChatView.focus"
+  },
   // General
   {
     "key": "ctrl+shift+c",
@@ -422,7 +426,7 @@
   {
     "key": "ctrl+oem_comma",
     "command": "workbench.view.explorer",
-    "when": "viewContainer.workbench.view.explorer.enabled && !sideBarVisible || (sideBarFocus || focusedView == 'github:createPullRequestWebview' || focusedView == 'gitlens.views.commitDetails') && viewContainer.workbench.view.explorer.enabled && !filesExplorerFocus"
+    "when": "viewContainer.workbench.view.explorer.enabled && !sideBarVisible || (sideBarFocus || focusedView == 'aws.AmazonQChatView' || focusedView == 'github:createPullRequestWebview' || focusedView == 'gitlens.views.commitDetails') && viewContainer.workbench.view.explorer.enabled && !filesExplorerFocus"
   },
   {
     "key": "ctrl+shift+e",
@@ -848,7 +852,7 @@
   {
     "key": "ctrl+oem_comma",
     "command": "workbench.action.focusSideBar",
-    "when": "sideBarVisible && !sideBarFocus && focusedView != 'gitlens.views.commitDetails' && focusedView != 'github:createPullRequestWebview'"
+    "when": "sideBarVisible && !sideBarFocus && focusedView != 'aws.AmazonQChatView' && focusedView != 'gitlens.views.commitDetails' && focusedView != 'github:createPullRequestWebview'"
   },
   {
     "key": "shift+z shift+z",
@@ -1583,5 +1587,9 @@
     "key": "tab",
     "command": "-acceptSelectedSuggestion",
     "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
-  }
+  },
+  {
+    "key": "ctrl+w z",
+    "command": "workbench.action.toggleCenteredLayout"
+  },
 ]
