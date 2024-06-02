@@ -1578,4 +1578,10 @@
     "key": "shift+alt+oem_1",
     "command": "git.viewStagedChanges"
   },
+  // use Enter for inserting snippets/intellisense suggestions (not Tab!), use Tab for AI auto-completions or snippet placeholder moves
+  {
+    "key": "tab",
+    "command": "-acceptSelectedSuggestion",
+    "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
+  },
 ]
