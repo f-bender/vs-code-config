@@ -7,16 +7,25 @@
     "astype",
     "behaviour",
     "bfill",
+    "chdir",
     "coret",
+    "creds",
+    "customizability",
     "dateutil",
     "DCGM",
     "dcid",
     "dropna",
+    "dtype",
+    "dtypes",
+    "duckdb",
     "fillna",
+    "gunicorn",
     "hrefs",
     "Iframe",
     "iloc",
+    "imread",
     "ipynb",
+    "isin",
     "iterrows",
     "jsdelivr",
     "kpis",
@@ -37,17 +46,20 @@
     "topk",
     "tqdm",
     "uids",
+    "unmark",
     "unstage",
     "vdeep",
     "venv",
     "vsintellicode",
     "wsid",
-    "xaxis"
+    "xaxis",
+    "yaxis",
   ],
   // * in case we want to disallow compound words, exceptions must be included manually:
   // "cSpell.userWords": [
   //   "codeowners",
   //   "isoparse",
+  //   "dateutil",
   //   "readall",
   //   "maxsplit",
   //   "usecase",
@@ -685,7 +697,35 @@
       "commands": [
         ":nohl"
       ]
-    }
+    },
+    {
+      "before": [
+        "<C-w>",
+        "z"
+      ],
+      "commands": [
+        "workbench.action.toggleCenteredLayout"
+      ]
+    },
+    // the following 2 commands are a workaround since VSCode 1.90.0 broke the standard <C-w> v/s binding of VSCodeVim
+    {
+      "before": [
+        "<C-w>",
+        "v"
+      ],
+      "commands": [
+        "workbench.action.splitEditor"
+      ]
+    },
+    {
+      "before": [
+        "<C-w>",
+        "s"
+      ],
+      "commands": [
+        "workbench.action.splitEditorDown"
+      ]
+    },
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
@@ -1029,7 +1069,7 @@
   "editor.stickyScroll.enabled": true,
   "gitlens.keymap": "alternate",
   "editor.mouseWheelZoom": true,
-  "zenMode.showTabs": "none",
+  "zenMode.showTabs": "single",
   "zenMode.hideLineNumbers": false,
   "terminal.integrated.tabs.hideCondition": "singleGroup",
   "gitlens.blame.format": "${author|40} ${message|60?} ${agoOrDate|14-}",
@@ -1060,6 +1100,10 @@
   "github.copilot.editor.enableAutoCompletions": true,
   "workbench.editor.wrapTabs": true,
   "vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjfö-",
-  "vim.useSystemClipboard": true,
   "vim.hlsearch": true,
+  "git.untrackedChanges": "separate",
+  "output.smartScroll.enabled": false,
+  "workbench.editor.centeredLayoutFixedWidth": true,
+  "ruff.lineLength": 120,
+  "errorLens.enabled": true,
 }

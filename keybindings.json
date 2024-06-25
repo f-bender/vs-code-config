@@ -6,6 +6,15 @@
 //* which outputs the current context keys to the Developer Console, which can be activated using the "Developer: Toggle Developer Tools" command.
 //* See https://code.visualstudio.com/api/references/when-clause-contexts
 [
+  // Azure
+  {
+    "key": "ctrl+shift+a",
+    "command": "workbench.view.extension.azure"
+  },
+  {
+    "key": "shift+alt+a",
+    "command": "-workbench.view.extension.azure"
+  },
   // Amazon Q / Code Whisperer
   {
     "key": "ctrl+enter",
@@ -107,7 +116,7 @@
     "when": "!vim.active"
   },
   {
-    "key": "ctrl+shift+a",
+    "key": "shift+alt+a",
     "command": "workbench.action.tasks.runTask",
     "args": "pytest"
   },
@@ -574,14 +583,14 @@
     "when": "sideBarFocus && vim.active"
   },
   {
-    "key": "ctrl+alt+h",
+    "key": "ctrl+alt+l",
     "command": "workbench.action.decreaseViewSize",
-    "when": "vim.active && !panelFocus && !sideBarFocus && !terminalFocus"
+    "when": "vim.active && panelFocus && !sideBarFocus && !terminalFocus"
   },
   {
-    "key": "ctrl+alt+l",
+    "key": "ctrl+alt+h",
     "command": "workbench.action.increaseViewSize",
-    "when": "vim.active && !panelFocus && !sideBarFocus && !terminalFocus"
+    "when": "vim.active && panelFocus && !sideBarFocus && !terminalFocus"
   },
   {
     "key": "alt+j",
@@ -989,7 +998,7 @@
   {
     "key": "ctrl+shift+j",
     "command": "workbench.action.chat.nextCodeBlock",
-    "when": "hasChatProvider && inChat"
+    "when": "chatIsEnabled && inChat"
   },
   {
     "key": "ctrl+shift+m h",
@@ -1109,7 +1118,7 @@
   {
     "key": "ctrl+oem_comma",
     "command": "workbench.action.toggleSidebarVisibility",
-    "when": "filesExplorerFocus"
+    "when": "filesExplorerFocus || openEditorsFocus"
   },
   {
     "key": "shift+alt+k",
@@ -1196,7 +1205,7 @@
   {
     "key": "ctrl+shift+j",
     "command": "runCommands",
-    "when": "mergeConflictsCount > 0",
+    "when": "mergeConflictsCount > 0 && !editorReadonly",
     "args": {
       "commands": [
         "merge-conflict.next",
@@ -1215,7 +1224,7 @@
   {
     "key": "ctrl+shift+k",
     "command": "runCommands",
-    "when": "mergeConflictsCount > 0",
+    "when": "mergeConflictsCount > 0 && !editorReadonly",
     "args": {
       "commands": [
         "merge-conflict.previous",
@@ -1338,7 +1347,7 @@
   {
     "key": "ctrl+shift+k",
     "command": "workbench.action.chat.previousCodeBlock",
-    "when": "hasChatProvider && inChat"
+    "when": "chatIsEnabled && inChat"
   },
   {
     "key": "ctrl+shift+7",
@@ -1505,10 +1514,6 @@
     "when": "!isAuxiliaryWindowFocusedContext"
   },
   {
-    "key": "alt+z",
-    "command": "workbench.action.toggleCenteredLayout"
-  },
-  {
     "key": "ctrl+l",
     "command": "search.action.cancel",
     "when": "listFocus && searchViewletVisible && !inputFocus && !treestickyScrollFocused && searchState != '0'"
@@ -1582,14 +1587,188 @@
     "key": "shift+alt+oem_1",
     "command": "git.viewStagedChanges"
   },
-  // use Enter for inserting snippets/intellisense suggestions (not Tab!), use Tab for AI auto-completions or snippet placeholder moves
+  // the below is commented out because it just feels more natural to be able to tab the suggestion into existence
+  // // use Enter for inserting snippets/intellisense suggestions (not Tab!), use Tab for AI auto-completions or snippet placeholder moves
+  // {
+  //   "key": "tab",
+  //   "command": "-acceptSelectedSuggestion",
+  //   "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
+  // },
   {
-    "key": "tab",
-    "command": "-acceptSelectedSuggestion",
-    "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
+    "key": "alt+e",
+    "command": "errorLens.toggle"
   },
   {
-    "key": "ctrl+w z",
+    "key": "ctrl+alt+u",
+    "command": "git.unstage",
+    "when": "focusedView == 'workbench.scm'"
+  },
+  {
+    "key": "ctrl+shift+l",
+    "command": "git.stage",
+    "when": "focusedView == 'workbench.scm'"
+  },
+  {
+    "key": "ctrl+shift+h",
+    "command": "git.clean",
+    "when": "focusedView == 'workbench.scm'"
+  },
+  {
+    "key": "ctrl+oem_3",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active && !(panelVisible && !panelFocus)"
+  },
+  {
+    "key": "ctrl+oem_3",
+    "command": "-workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  {
+    "key": "ctrl+oem_3",
+    "command": "workbench.action.focusPanel",
+    "when": "panelVisible && !panelFocus"
+  },
+  {
+    "key": "ctrl+shift+alt+oem_1",
+    "command": "gitlens.compareWorkingWith"
+  },
+  {
+    "key": "alt+p",
+    "command": "workbench.view.extension.github-pull-request"
+  },
+  {
+    "key": "alt+m",
+    "command": "runCommands",
+    "when": "resourcePath not in 'github:viewedFiles' && editorFocus",
+    "args": {
+      "commands": [
+        "pr.markFileAsViewed",
+        "workbench.action.focusSideBar",
+      ]
+    }
+  },
+  {
+    "key": "alt+m",
+    "command": "pr.unmarkFileAsViewed",
+    "when": "resourcePath in 'github:viewedFiles' && editorFocus"
+  },
+  {
+    "key": "alt+z",
     "command": "workbench.action.toggleCenteredLayout"
+  },
+  {
+    "key": "escape escape",
+    "command": "-workbench.action.exitZenMode",
+    "when": "inZenMode"
+  },
+  {
+    "key": "ctrl+shift+j",
+    "command": "workbench.scm.action.focusNextInput",
+    "when": "focusedView == 'workbench.scm'"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "workbench.scm.action.focusPreviousInput",
+    "when": "focusedView == 'workbench.scm'"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.scm.action.focusNextResourceGroup",
+    "when": "focusedView == 'workbench.scm'"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.scm.action.focusPreviousResourceGroup",
+    "when": "focusedView == 'workbench.scm'"
+  },
+  {
+    "key": "ctrl+shift+j",
+    "command": "search.focus.nextInputBox",
+    "when": "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "search.focus.previousInputBox",
+    "when": "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible && !searchInputBoxFocus"
+  },
+  {
+    "key": "alt+n",
+    "command": "search.action.focusNextSearchResult",
+    "when": "hasSearchResult || inSearchEditor"
+  },
+  {
+    "key": "shift+alt+n",
+    "command": "search.action.focusPreviousSearchResult",
+    "when": "hasSearchResult || inSearchEditor"
+  },
+  {
+    "key": "ctrl+7",
+    "command": "workbench.action.chat.attachContext",
+    "when": "inChatInput"
+  },
+  {
+    "key": "ctrl+oem_2",
+    "command": "-workbench.action.chat.attachContext",
+    "when": "inChatInput"
+  },
+  {
+    "key": "ctrl+m",
+    "command": "quickInput.acceptInBackground",
+    "when": "cursorAtEndOfQuickInputBox && inQuickInput && quickInputType == 'quickPick' || inQuickInput && !inputFocus && quickInputType == 'quickPick'"
+  },
+  {
+    "key": "ctrl+g",
+    "command": "quickInput.first",
+    "when": "inQuickInput && quickInputType == 'quickPick'"
+  },
+  {
+    "key": "ctrl+shift+j",
+    "command": "quickInput.nextSeparatorWithQuickAccessFallback",
+    "when": "inQuickInput && quickInputType == 'quickPick'"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "quickInput.previousSeparatorWithQuickAccessFallback",
+    "when": "inQuickInput && quickInputType == 'quickPick'"
+  },
+  {
+    "key": "ctrl+u",
+    "command": "quickInput.pagePrevious",
+    "when": "inQuickInput && quickInputType == 'quickPick'"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "quickInput.pageNext",
+    "when": "inQuickInput && quickInputType == 'quickPick'"
+  },
+  {
+    "key": "ctrl+shift+g",
+    "command": "quickInput.last",
+    "when": "inQuickInput && quickInputType == 'quickPick'"
+  },
+  {
+    "key": "ctrl+shift+m c",
+    "command": "github.copilot.chat.attachSelection",
+    "when": "vim.mode == 'Visual' || vim.mode == 'VisualLine'"
+  },
+  {
+    "key": "ctrl+shift+m c",
+    "command": "github.copilot.chat.attachFile",
+    "when": "vim.mode != 'Visual' && vim.mode != 'VisualLine'"
+  },
+  {
+    "key": "ctrl+shift+m c",
+    "command": "inlineChat.viewInChat",
+    "when": "inlineChatHasProvider && inlineChatVisible"
+  },
+  {
+    "key": "ctrl+alt+h",
+    "command": "workbench.action.decreaseViewSize",
+    "when": "vim.active && !panelFocus && !sideBarFocus && !terminalFocus"
+  },
+  {
+    "key": "ctrl+alt+l",
+    "command": "workbench.action.increaseViewSize",
+    "when": "vim.active && !panelFocus && !sideBarFocus && !terminalFocus"
   },
 ]
