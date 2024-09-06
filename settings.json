@@ -26,6 +26,7 @@
     "Iframe",
     "iloc",
     "imread",
+    "infile",
     "ints",
     "ipynb",
     "isin",
@@ -34,6 +35,7 @@
     "kpis",
     "mddump",
     "mypy",
+    "ndarray",
     "ndenumerate",
     "ndim",
     "ndindex",
@@ -54,6 +56,7 @@
     "rtype",
     "runid",
     "semseg",
+    "sharded",
     "socketio",
     "spinup",
     "Tetris",
@@ -151,6 +154,13 @@
     },
     "editor.defaultFormatter": "charliermarsh.ruff"
   },
+  "ruff.lineLength": 120,
+  "ruff.format.args": [
+    "--line-length=120"
+  ],
+  "ruff.lint.args": [
+    "--line-length=120"
+  ],
   "yaml.customTags": [
     "!And",
     "!And sequence",
@@ -745,6 +755,205 @@
         "workbench.action.splitEditorDown"
       ]
     },
+    {
+      "before": [
+        "<leader>",
+        "1"
+      ],
+      "commands": [
+        "vscode-harpoon.gotoEditor1"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "2"
+      ],
+      "commands": [
+        "vscode-harpoon.gotoEditor2"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "3"
+      ],
+      "commands": [
+        "vscode-harpoon.gotoEditor3"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "4"
+      ],
+      "commands": [
+        "vscode-harpoon.gotoEditor4"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "5"
+      ],
+      "commands": [
+        "vscode-harpoon.gotoEditor5"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "6"
+      ],
+      "commands": [
+        "vscode-harpoon.gotoEditor6"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "7"
+      ],
+      "commands": [
+        "vscode-harpoon.gotoEditor7"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "8"
+      ],
+      "commands": [
+        "vscode-harpoon.gotoEditor8"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "9"
+      ],
+      "commands": [
+        "vscode-harpoon.gotoEditor9"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "<leader>",
+        "1"
+      ],
+      "commands": [
+        "vscode-harpoon.addEditor1"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "<leader>",
+        "2"
+      ],
+      "commands": [
+        "vscode-harpoon.addEditor2"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "<leader>",
+        "3"
+      ],
+      "commands": [
+        "vscode-harpoon.addEditor3"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "<leader>",
+        "4"
+      ],
+      "commands": [
+        "vscode-harpoon.addEditor4"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "<leader>",
+        "5"
+      ],
+      "commands": [
+        "vscode-harpoon.addEditor5"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "<leader>",
+        "6"
+      ],
+      "commands": [
+        "vscode-harpoon.addEditor6"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "<leader>",
+        "7"
+      ],
+      "commands": [
+        "vscode-harpoon.addEditor7"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "<leader>",
+        "8"
+      ],
+      "commands": [
+        "vscode-harpoon.addEditor8"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "<leader>",
+        "9"
+      ],
+      "commands": [
+        "vscode-harpoon.addEditor9"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "<leader>",
+        "ä"
+      ],
+      "commands": [
+        "vscode-harpoon.editEditors"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "ä"
+      ],
+      "commands": [
+        "vscode-harpoon.editorQuickPick"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "o"
+      ],
+      "commands": [
+        "vscode-harpoon.gotoPreviousHarpoonEditor"
+      ]
+    },
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
@@ -1043,6 +1252,205 @@
         "k",
       ],
     },
+    {
+      "before": [
+        "<leader>",
+        "1"
+      ],
+      "commands": [
+        "vscode-harpoon.gotoEditor1"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "2"
+      ],
+      "commands": [
+        "vscode-harpoon.gotoEditor2"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "3"
+      ],
+      "commands": [
+        "vscode-harpoon.gotoEditor3"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "4"
+      ],
+      "commands": [
+        "vscode-harpoon.gotoEditor4"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "5"
+      ],
+      "commands": [
+        "vscode-harpoon.gotoEditor5"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "6"
+      ],
+      "commands": [
+        "vscode-harpoon.gotoEditor6"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "7"
+      ],
+      "commands": [
+        "vscode-harpoon.gotoEditor7"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "8"
+      ],
+      "commands": [
+        "vscode-harpoon.gotoEditor8"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "9"
+      ],
+      "commands": [
+        "vscode-harpoon.gotoEditor9"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "<leader>",
+        "1"
+      ],
+      "commands": [
+        "vscode-harpoon.addEditor1"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "<leader>",
+        "2"
+      ],
+      "commands": [
+        "vscode-harpoon.addEditor2"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "<leader>",
+        "3"
+      ],
+      "commands": [
+        "vscode-harpoon.addEditor3"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "<leader>",
+        "4"
+      ],
+      "commands": [
+        "vscode-harpoon.addEditor4"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "<leader>",
+        "5"
+      ],
+      "commands": [
+        "vscode-harpoon.addEditor5"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "<leader>",
+        "6"
+      ],
+      "commands": [
+        "vscode-harpoon.addEditor6"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "<leader>",
+        "7"
+      ],
+      "commands": [
+        "vscode-harpoon.addEditor7"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "<leader>",
+        "8"
+      ],
+      "commands": [
+        "vscode-harpoon.addEditor8"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "<leader>",
+        "9"
+      ],
+      "commands": [
+        "vscode-harpoon.addEditor9"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "<leader>",
+        "ä"
+      ],
+      "commands": [
+        "vscode-harpoon.editEditors"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "ä"
+      ],
+      "commands": [
+        "vscode-harpoon.editorQuickPick"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "o"
+      ],
+      "commands": [
+        "vscode-harpoon.gotoPreviousHarpoonEditor"
+      ]
+    },
   ],
   "vim.insertModeKeyBindingsNonRecursive": [
     {
@@ -1106,7 +1514,8 @@
   "vim.easymotion": true,
   "notebook.lineNumbers": "on",
   "markdownlint.config": {
-    "MD038": false
+    "MD038": false,
+    "MD026": false
   },
   "diffEditor.renderSideBySide": true,
   "python.analysis.inlayHints.pytestParameters": true,
@@ -1123,9 +1532,9 @@
   "git.untrackedChanges": "separate",
   "output.smartScroll.enabled": false,
   "workbench.editor.centeredLayoutFixedWidth": true,
-  "ruff.lineLength": 120,
+  "inlineChat.experimental.textButtons": true,
   "errorLens.enabled": false,
-  "[markdown]": {
-    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
-  },
+  "diffEditor.experimental.useTrueInlineView": true,
+  "accessibility.voice.speechTimeout": 10000,
+  "accessibility.voice.autoSynthesize": true,
 }

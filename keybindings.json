@@ -67,7 +67,7 @@
     "command": "-aws.amazonq.sendToPrompt"
   },
   {
-    "key": "ctrl+shift+m s",
+    "key": "ctrl+shift+m ctrl+shift+oem_comma",
     "command": "aws.AmazonQChatView.focus"
   },
   // General
@@ -229,7 +229,7 @@
     "when": "editorTextFocus && foldingEnabled && vim.active"
   },
   {
-    "key": "ctrl+oem_7",
+    "key": "ctrl+alt+oem_3",
     "command": "workbench.action.toggleMaximizedPanel"
   },
   {
@@ -983,7 +983,7 @@
     "when": "editorFocus"
   },
   {
-    "key": "ctrl+shift+m s",
+    "key": "ctrl+shift+m oem_comma",
     "command": "workbench.panel.chat.view.copilot.focus"
   },
   {
@@ -1584,7 +1584,7 @@
     }
   },
   {
-    "key": "shift+alt+oem_1",
+    "key": "ctrl+shift+alt+oem_1",
     "command": "git.viewStagedChanges"
   },
   // the below is commented out because it just feels more natural to be able to tab the suggestion into existence
@@ -1629,7 +1629,7 @@
     "when": "panelVisible && !panelFocus"
   },
   {
-    "key": "ctrl+shift+alt+oem_1",
+    "key": "shift+alt+oem_1",
     "command": "gitlens.compareWorkingWith"
   },
   {
@@ -1771,4 +1771,130 @@
     "command": "workbench.action.increaseViewSize",
     "when": "vim.active && !panelFocus && !sideBarFocus && !terminalFocus"
   },
+  {
+    "key": "ctrl+shift+a",
+    "command": "workbench.view.extension.azure"
+  },
+  {
+    "key": "shift+alt+a",
+    "command": "-workbench.view.extension.azure"
+  },
+  {
+    "key": "ctrl+alt+s",
+    "command": "git.stashStaged"
+  },
+  {
+    "key": "shift+alt+y",
+    "command": "issue.copyGithubPermalink"
+  },
+  {
+    "key": "ctrl+shift+m ctrl+shift+oem_comma",
+    "command": "workbench.panel.chat.view.copilot.focus"
+  },
+  {
+    "key": "ctrl+shift+m e",
+    "command": "github.copilot.chat.explain"
+  },
+  {
+    "key": "ctrl+shift+oem_7 1",
+    "command": "vscode-harpoon.addEditor1"
+  },
+  {
+    "key": "ctrl+shift+oem_7 ctrl+shift+oem_7",
+    "command": "vscode-harpoon.addEditor"
+  },
+  {
+    "key": "ctrl+shift+oem_7 2",
+    "command": "vscode-harpoon.addEditor2"
+  },
+  {
+    "key": "ctrl+shift+oem_7 3",
+    "command": "vscode-harpoon.addEditor3"
+  },
+  {
+    "key": "ctrl+shift+oem_7 4",
+    "command": "vscode-harpoon.addEditor4"
+  },
+  {
+    "key": "ctrl+shift+oem_7 5",
+    "command": "vscode-harpoon.addEditor5"
+  },
+  {
+    "key": "ctrl+shift+oem_7 6",
+    "command": "vscode-harpoon.addEditor6"
+  },
+  {
+    "key": "ctrl+shift+oem_7 7",
+    "command": "vscode-harpoon.addEditor7"
+  },
+  {
+    "key": "ctrl+shift+oem_7 8",
+    "command": "vscode-harpoon.addEditor8"
+  },
+  {
+    "key": "ctrl+shift+oem_7 9",
+    "command": "vscode-harpoon.addEditor9"
+  },
+  {
+    "key": "ctrl+oem_7 1",
+    "command": "vscode-harpoon.gotoEditor1"
+  },
+  {
+    "key": "ctrl+oem_7 2",
+    "command": "vscode-harpoon.gotoEditor2"
+  },
+  {
+    "key": "ctrl+oem_7 3",
+    "command": "vscode-harpoon.gotoEditor3"
+  },
+  {
+    "key": "ctrl+oem_7 4",
+    "command": "vscode-harpoon.gotoEditor4"
+  },
+  {
+    "key": "ctrl+oem_7 5",
+    "command": "vscode-harpoon.gotoEditor5"
+  },
+  {
+    "key": "ctrl+oem_7 6",
+    "command": "vscode-harpoon.gotoEditor6"
+  },
+  {
+    "key": "ctrl+oem_7 7",
+    "command": "vscode-harpoon.gotoEditor7"
+  },
+  {
+    "key": "ctrl+oem_7 8",
+    "command": "vscode-harpoon.gotoEditor8"
+  },
+  {
+    "key": "ctrl+oem_7 9",
+    "command": "vscode-harpoon.gotoEditor9"
+  },
+  {
+    "key": "ctrl+oem_7 oem_7",
+    "command": "vscode-harpoon.editEditors"
+  },
+  {
+    "key": "ctrl+oem_7 ctrl+o",
+    "command": "vscode-harpoon.gotoPreviousHarpoonEditor"
+  },
+  {
+    "key": "ctrl+oem_7 ctrl+oem_7",
+    "command": "vscode-harpoon.editorQuickPick"
+  },
+  {
+    "key": "ctrl+oem_7 o",
+    "command": "vscode-harpoon.gotoPreviousHarpoonEditor"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "workbench.action.files.openFile",
+    "when": "!vim.active"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "-workbench.action.files.openFile",
+    "when": "true"
+  }
 ]
