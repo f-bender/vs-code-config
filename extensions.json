@@ -442,6 +442,10 @@
         "state": true
     },
     {
+        "id": "cssho.vscode-svgviewer",
+        "state": true
+    },
+    {
         "id": "DavidAnson.vscode-markdownlint",
         "state": false
     },
@@ -452,6 +456,10 @@
     {
         "id": "GrapeCity.gc-excelviewer",
         "state": true
+    },
+    {
+        "id": "Jeff-Tian.tex-workshop",
+        "state": false
     },
     {
         "id": "mechatroner.rainbow-csv",
@@ -503,6 +511,14 @@
     },
     {
         "id": "streetsidesoftware.code-spell-checker",
+        "state": true
+    },
+    {
+        "id": "tamasfe.even-better-toml",
+        "state": false
+    },
+    {
+        "id": "tobias-z.vscode-harpoon",
         "state": true
     },
     {
