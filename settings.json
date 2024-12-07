@@ -65,6 +65,7 @@
     "topk",
     "tqdm",
     "uids",
+    "uncolorable",
     "Undrawable",
     "unfillable",
     "unmark",
@@ -75,7 +76,7 @@
     "vsintellicode",
     "wsid",
     "xaxis",
-    "yaxis",
+    "yaxis"
   ],
   // * in case we want to disallow compound words, exceptions must be included manually:
   // "cSpell.userWords": [
@@ -1537,4 +1538,7 @@
   "diffEditor.experimental.useTrueInlineView": true,
   "accessibility.voice.speechTimeout": 10000,
   "accessibility.voice.autoSynthesize": true,
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  },
 }

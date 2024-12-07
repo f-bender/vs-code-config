@@ -1896,5 +1896,19 @@
     "key": "ctrl+o",
     "command": "-workbench.action.files.openFile",
     "when": "true"
-  }
+  },
+  {
+    "key": "ctrl+shift+alt+oem_period",
+    "command": "editor.action.marker.nextInFiles",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+shift+alt+oem_comma",
+    "command": "editor.action.marker.prevInFiles",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+w",
+    "command": "editor.debug.action.selectionToWatch"
+  },
 ]
