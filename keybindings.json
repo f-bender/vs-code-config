@@ -6,15 +6,6 @@
 //* which outputs the current context keys to the Developer Console, which can be activated using the "Developer: Toggle Developer Tools" command.
 //* See https://code.visualstudio.com/api/references/when-clause-contexts
 [
-  // Azure
-  {
-    "key": "ctrl+shift+a",
-    "command": "workbench.view.extension.azure"
-  },
-  {
-    "key": "shift+alt+a",
-    "command": "-workbench.view.extension.azure"
-  },
   // Amazon Q / Code Whisperer
   {
     "key": "ctrl+enter",
@@ -222,11 +213,6 @@
     "key": "shift+escape",
     "command": "-closeDirtyDiff",
     "when": "dirtyDiffVisible"
-  },
-  {
-    "key": "ctrl+alt+f",
-    "command": "editor.toggleFold", // NOTE: works in vim using "za"!
-    "when": "editorTextFocus && foldingEnabled && vim.active"
   },
   {
     "key": "ctrl+alt+oem_3",
@@ -1529,7 +1515,7 @@
     "when": "focusedView == 'workbench.panel.comments'"
   },
   {
-    "key": "ctrl+alt+d",
+    "key": "ctrl+shift+oem_comma c",
     "command": "workbench.action.addComment"
   },
   {
@@ -1633,7 +1619,7 @@
     "command": "gitlens.compareWorkingWith"
   },
   {
-    "key": "alt+p",
+    "key": "ctrl+shift+oem_comma ctrl+shift+oem_comma",
     "command": "workbench.view.extension.github-pull-request"
   },
   {
@@ -1648,9 +1634,9 @@
     }
   },
   {
-    "key": "alt+m",
+    "key": "ctrl+shift+oem_comma ctrl+shift+m",
     "command": "pr.unmarkFileAsViewed",
-    "when": "resourcePath in 'github:viewedFiles' && editorFocus"
+    "when": "editorFocus && resourcePath in 'github:viewedFiles'"
   },
   {
     "key": "alt+z",
@@ -1911,4 +1897,83 @@
     "key": "alt+w",
     "command": "editor.debug.action.selectionToWatch"
   },
+  {
+    "key": "shift+7",
+    "command": "list.find",
+    "when": "listFocus && listSupportsFind"
+  },
+  {
+    "key": "ctrl+shift+t",
+    "command": "workbench.action.reopenClosedEditor",
+    "when": "!vim.active"
+  },
+  {
+    "key": "ctrl+shift+t",
+    "command": "-workbench.action.reopenClosedEditor"
+  },
+  {
+    "key": "ctrl+shift+t",
+    "command": "workbench.view.extension.test"
+  },
+  {
+    "key": "alt+oem_period",
+    "command": "testing.goToNextMessage",
+    "when": "editorFocus && testing.isPeekVisible"
+  },
+  {
+    "key": "alt+oem_comma",
+    "command": "testing.goToPreviousMessage",
+    "when": "editorFocus && testing.isPeekVisible"
+  },
+  {
+    "key": "enter",
+    "command": "python.execInREPLEnter",
+    "when": "!config.interactiveWindow.executeWithShiftEnter && !inlineChatFocused && activeEditor == 'workbench.editor.repl' && !sideBarFocus"
+  },
+  {
+    "key": "enter",
+    "command": "-python.execInREPLEnter",
+    "when": "!config.interactiveWindow.executeWithShiftEnter && !inlineChatFocused && activeEditor == 'workbench.editor.repl'"
+  },
+  {
+    "key": "ctrl+shift+oem_comma ctrl+shift+m",
+    "command": "pr.markFileAsViewed",
+    "when": "editorFocus && resourcePath not in 'github:viewedFiles'"
+  },
+  {
+    "key": "ctrl+shift+oem_comma s",
+    "command": "pr.makeSuggestion",
+    "when": "commentEditorFocused"
+  },
+  {
+    "key": "ctrl+k m",
+    "command": "-pr.makeSuggestion",
+    "when": "commentEditorFocused"
+  },
+  {
+    "key": "ctrl+shift+oem_comma shift+c",
+    "command": "pr.addFileComment"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "-markdown.extension.onCtrlEnterKey",
+    "when": "editorTextFocus && !editorHasMultipleSelections && !editorReadonly && !markdown.extension.editor.cursor.inFencedCodeBlock && !markdown.extension.editor.cursor.inMathEnv && !suggestWidgetVisible && editorLangId =~ /^markdown$|^rmd$|^quarto$/ || editorTextFocus && !editorHasMultipleSelections && !editorReadonly && !markdown.extension.editor.cursor.inFencedCodeBlock && !markdown.extension.editor.cursor.inMathEnv && config.editor.acceptSuggestionOnEnter == 'off' && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+  },
+  {
+    "key": "ctrl+shift+oem_comma shift+t",
+    "command": "workbench.action.expandAllComments"
+  },
+  {
+    "key": "ctrl+shift+oem_comma t",
+    "command": "workbench.action.collapseAllComments"
+  },
+  {
+    "key": "ctrl+shift+oem_comma g",
+    "command": "pr.openPullsWebsite"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "list.closeFind",
+    "when": "listFocus && treeFindOpen"
+  }
 ]

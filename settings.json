@@ -1530,15 +1530,22 @@
   "workbench.editor.wrapTabs": true,
   "vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjfö-",
   "vim.hlsearch": true,
+  "errorLens.enabled": false,
   "git.untrackedChanges": "separate",
   "output.smartScroll.enabled": false,
   "workbench.editor.centeredLayoutFixedWidth": true,
   "inlineChat.experimental.textButtons": true,
-  "errorLens.enabled": false,
   "diffEditor.experimental.useTrueInlineView": true,
   "accessibility.voice.speechTimeout": 10000,
-  "accessibility.voice.autoSynthesize": true,
-  "[markdown]": {
-    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  "accessibility.voice.autoSynthesize": "on",
+  "gitlens.advanced.messages": {
+    "suppressIntegrationRequestFailed500Warning": true
   },
+  "github.copilot.chat.experimental.temporalContext.enabled": true,
+  "github.copilot.chat.experimental.testGeneration.instructions": [
+    {
+      "text": "Always write tests in pytest style. Avoid code duplication during test setup by using pytest fixtures. Always include comments in the form of # GIVEN, # WHEN, # THEN. Always include short docstrings for the test module, each fixture, and each test function.",
+    }
+  ],
+  "python.terminal.shellIntegration.enabled": true,
 }
