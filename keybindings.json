@@ -964,13 +964,9 @@
     "when": "workbench.panel.markers.view.active"
   },
   {
-    "key": "ctrl+shift+m e",
+    "key": "ctrl+shift+m x",
     "command": "github.copilot.interactiveEditor.explain",
     "when": "editorFocus"
-  },
-  {
-    "key": "ctrl+shift+m oem_comma",
-    "command": "workbench.panel.chat.view.copilot.focus"
   },
   {
     "key": "ctrl+shift+m q",
@@ -1085,7 +1081,7 @@
   {
     "key": "shift+alt+l",
     "command": "editor.action.inlineSuggest.acceptNextWord",
-    "when": "inlineSuggestionVisible && vim.active && !editorReadonly && vim.mode == 'Insert'"
+    "when": "inlineSuggestionVisible && vim.active && !editorReadonly"
   },
   {
     "key": "ctrl+p",
@@ -1112,7 +1108,8 @@
   },
   {
     "key": "shift+alt+j",
-    "command": "workbench.action.terminal.selectToNextLine"
+    "command": "workbench.action.terminal.selectToNextLine",
+    "when": "terminalFocus"
   },
   {
     "key": "ctrl+alt+oem_period",
@@ -1379,7 +1376,7 @@
     "when": "terminalChatFocus && terminalChatVisible"
   },
   {
-    "key": "ctrl+shift+m e",
+    "key": "ctrl+shift+m x",
     "command": "github.copilot.terminal.explainTerminalLastCommand",
     "when": "terminalFocus"
   },
@@ -1623,17 +1620,6 @@
     "command": "workbench.view.extension.github-pull-request"
   },
   {
-    "key": "alt+m",
-    "command": "runCommands",
-    "when": "resourcePath not in 'github:viewedFiles' && editorFocus",
-    "args": {
-      "commands": [
-        "pr.markFileAsViewed",
-        "workbench.action.focusSideBar",
-      ]
-    }
-  },
-  {
     "key": "ctrl+shift+oem_comma ctrl+shift+m",
     "command": "pr.unmarkFileAsViewed",
     "when": "editorFocus && resourcePath in 'github:viewedFiles'"
@@ -1774,11 +1760,7 @@
     "command": "issue.copyGithubPermalink"
   },
   {
-    "key": "ctrl+shift+m ctrl+shift+oem_comma",
-    "command": "workbench.panel.chat.view.copilot.focus"
-  },
-  {
-    "key": "ctrl+shift+m e",
+    "key": "ctrl+shift+m x",
     "command": "github.copilot.chat.explain"
   },
   {
@@ -1968,8 +1950,162 @@
     "command": "workbench.action.collapseAllComments"
   },
   {
+    "key": "ctrl+shift+enter",
+    "command": "-editor.action.insertLineBefore",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+m ctrl+shift+oem_comma",
+    "command": "workbench.action.chat.open",
+    "when": "chatPanelParticipantRegistered"
+  },
+  {
+    "key": "ctrl+shift+m ctrl+shift+oem_comma",
+    "command": "workbench.panel.chat",
+    "when": "workbench.panel.chat.view.copilot.active"
+  },
+  {
+    "key": "ctrl+shift+m ctrl+shift+oem_comma",
+    "command": "workbench.action.toggleAuxiliaryBar",
+    "when": "false"
+  },
+  {
+    "key": "ctrl+alt+b",
+    "command": "-workbench.action.toggleAuxiliaryBar"
+  },
+  {
+    "key": "alt+m",
+    "command": "workbench.action.toggleSidebarPosition"
+  },
+  {
+    "key": "ctrl+shift+m e",
+    "command": "workbench.action.chat.openEditSession",
+    "when": "chatEditingParticipantRegistered && chatIsEnabled && view != 'workbench.panel.chat.view.edits'"
+  },
+  {
+    "key": "ctrl+shift+i",
+    "command": "-workbench.action.chat.openEditSession",
+    "when": "chatEditingParticipantRegistered && chatIsEnabled && view != 'workbench.panel.chat.view.edits'"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "-github.copilot.generate",
+    "when": "editorTextFocus && github.copilot.activated && !commentEditorFocused && !inInteractiveInput && !interactiveEditorFocused"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "editor.action.inlineSuggest.trigger",
+    "when": "config.github.copilot.inlineSuggest.enable && editorTextFocus && !editorHasSelection && !inlineSuggestionsVisible"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "-editor.action.insertLineAfter",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+alt+a",
+    "command": "acceptSelectedSuggestion",
+  },
+  {
+    "key": "ctrl+shift+alt+s",
+    "command": "insertBestCompletion",
+  },
+  {
+    "key": "ctrl+shift+alt+d",
+    "command": "insertNextSuggestion",
+  },
+  {
+    "key": "tab",
+    "command": "extension.vim_tab",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert' && !inlineSuggestionVisible"
+  },
+  {
+    "key": "tab",
+    "command": "-extension.vim_tab",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+  },
+  {
+    "key": "tab",
+    "command": "-extension.vim_tab",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+  },
+  {
+    "key": "shift+alt+j",
+    "command": "editor.action.inlineSuggest.acceptNextLine",
+    "when": "inlineSuggestionVisible"
+  },
+  {
+    "key": "ctrl+shift+m x",
+    "command": "github.copilot.chat.explain.palette"
+  },
+  {
+    "key": "ctrl+shift+m f",
+    "command": "github.copilot.chat.fix"
+  },
+  {
+    "key": "ctrl+shift+m d",
+    "command": "github.copilot.chat.generateDocs"
+  },
+  {
+    "key": "ctrl+shift+m t",
+    "command": "github.copilot.chat.generateTests"
+  },
+  {
+    "key": "ctrl+shift+m r",
+    "command": "github.copilot.chat.review"
+  },
+  {
+    "key": "ctrl+shift+alt+t",
+    "command": "testing.runCurrentFile",
+    "when": "editorTextFocus"
+  },
+  {
     "key": "ctrl+shift+oem_comma g",
-    "command": "pr.openPullsWebsite"
+    "command": "pr.openPullRequestOnGitHub"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "git.refresh",
+    "when": "scmProvider == 'git' && sideBarFocus"
+  },
+  {
+    "key": "shift+tab",
+    "command": "editor.action.inlineSuggest.commit",
+    "when": "inlineSuggestionVisible"
+  },
+  {
+    "key": "shift+tab",
+    "command": "-acceptAlternativeSelectedSuggestion",
+    "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "shift+tab",
+    "command": "outdent",
+    "when": "editorTextFocus && !editorReadonly && !editorTabMovesFocus && !vim.active"
+  },
+  {
+    "key": "shift+tab",
+    "command": "-outdent",
+    "when": "editorTextFocus && !editorReadonly && !editorTabMovesFocus"
+  },
+  {
+    "key": "ctrl+m",
+    "command": "editor.debug.action.showDebugHover",
+    "when": "editorTextFocus && inDebugMode"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "inlineChat.discardHunkChange",
+    "when": "inlineChatHasProvider && inlineChatVisible && inlineChatResponseType == 'messagesAndEdits'"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "inlineChat.close",
+    "when": "inlineChatHasProvider && inlineChatVisible"
+  },
+  {
+    "key": "ctrl+shift+oem_comma a",
+    "command": "pr.applySuggestion"
   },
   {
     "key": "ctrl+l",
