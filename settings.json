@@ -116,8 +116,8 @@
   "svg.preview.mode": "img",
   "files.watcherExclude": {
     "**/.*cache/**": true,
-    "**/.dash/**": true,
-    "**/.venv/**": true
+    "**/.*venv/**": true,
+    "**/.dash/**": true
   },
   "githubPullRequests.pullBranch": "never",
   "workbench.editorAssociations": {
@@ -684,24 +684,25 @@
         },
       ]
     },
-    {
-      "before": [
-        "H",
-      ],
-      "after": [
-        "L",
-        "H",
-      ],
-    },
-    {
-      "before": [
-        "L",
-      ],
-      "after": [
-        "H",
-        "L",
-      ],
-    },
+    // // This used to be a fix for a bug in VSCodeVim, (H/L would not consider scrolloff), but it seems to be fixed now
+    // {
+    //   "before": [
+    //     "H",
+    //   ],
+    //   "after": [
+    //     "L",
+    //     "H",
+    //   ],
+    // },
+    // {
+    //   "before": [
+    //     "L",
+    //   ],
+    //   "after": [
+    //     "H",
+    //     "L",
+    //   ],
+    // },
     {
       "before": [
         "<C-j>",
@@ -1488,7 +1489,6 @@
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "vim.leader": " ",
-  "workbench.sideBar.location": "right",
   "workbench.panel.defaultLocation": "right",
   "editor.accessibilitySupport": "off",
   "editor.occurrencesHighlight": "multiFile",
@@ -1541,11 +1541,14 @@
   "gitlens.advanced.messages": {
     "suppressIntegrationRequestFailed500Warning": true
   },
-  "github.copilot.chat.experimental.temporalContext.enabled": true,
-  "github.copilot.chat.experimental.testGeneration.instructions": [
+  "github.copilot.chat.search.semanticTextResults": false,
+  "python.terminal.shellIntegration.enabled": true,
+  "github.copilot.chat.testGeneration.instructions": [
     {
-      "text": "Always write tests in pytest style. Avoid code duplication during test setup by using pytest fixtures. Always include comments in the form of # GIVEN, # WHEN, # THEN. Always include short docstrings for the test module, each fixture, and each test function.",
+      "text": "Always write tests in pytest style. Avoid code duplication during test setup by using pytest fixtures. Always include comments in the form of # GIVEN, # WHEN, # THEN. Always include short docstrings for the test module, each fixture, and each test function. Create separate test functions for every test."
     }
   ],
-  "python.terminal.shellIntegration.enabled": true,
+  "github.copilot.chat.temporalContext.enabled": true,
+  "workbench.sideBar.location": "right",
+  "workbench.navigationControl.enabled": false,
 }
