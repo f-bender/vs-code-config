@@ -2111,5 +2111,27 @@
     "key": "ctrl+l",
     "command": "list.closeFind",
     "when": "listFocus && treeFindOpen"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "-workbench.action.terminal.chat.start",
+    "when": "terminalChatAgentRegistered && terminalFocusInAny && terminalHasBeenCreated || terminalChatAgentRegistered && terminalFocusInAny && terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+w z",
+    "command": "workbench.action.toggleCenteredLayout",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "shift+alt+b",
+    "command": "-extension.openInSpecifyBrowser"
+  },
+  {
+    "key": "shift+alt+b",
+    "command": "extension.openInDefaultBrowser"
+  },
+  {
+    "key": "alt+b",
+    "command": "-extension.openInDefaultBrowser"
   }
 ]

@@ -19,6 +19,7 @@
     "dtypes",
     "duckdb",
     "fillna",
+    "genai",
     "gunicorn",
     "hrefs",
     "htmx",
@@ -48,6 +49,7 @@
     "pydantic",
     "pyenv",
     "Pygame",
+    "pynput",
     "pyproject",
     "pytest",
     "Referer",
@@ -74,6 +76,7 @@
     "vectorize",
     "venv",
     "vsintellicode",
+    "wasd",
     "wsid",
     "xaxis",
     "yaxis"
@@ -1548,7 +1551,8 @@
       "text": "Always write tests in pytest style. Avoid code duplication during test setup by using pytest fixtures. Always include comments in the form of # GIVEN, # WHEN, # THEN. Always include short docstrings for the test module, each fixture, and each test function. Create separate test functions for every test."
     }
   ],
-  "github.copilot.chat.temporalContext.enabled": true,
+  "github.copilot.chat.editor.temporalContext.enabled": true,
   "workbench.sideBar.location": "right",
   "workbench.navigationControl.enabled": false,
+  "vim.easymotionMarkerForegroundColorOneChar": "#ffffff",
 }
