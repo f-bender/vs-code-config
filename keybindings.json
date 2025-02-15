@@ -1761,7 +1761,8 @@
   },
   {
     "key": "ctrl+shift+m x",
-    "command": "github.copilot.chat.explain"
+    "command": "github.copilot.chat.explain",
+    "when": "!terminalFocus"
   },
   {
     "key": "ctrl+shift+oem_7 1",
@@ -2036,7 +2037,8 @@
   },
   {
     "key": "ctrl+shift+m x",
-    "command": "github.copilot.chat.explain.palette"
+    "command": "github.copilot.chat.explain.palette",
+    "when": "!terminalFocus"
   },
   {
     "key": "ctrl+shift+m f",
@@ -2133,5 +2135,33 @@
   {
     "key": "alt+b",
     "command": "-extension.openInDefaultBrowser"
+  },
+  {
+    "key": "ctrl+shift+m q",
+    "command": "workbench.action.quickchat.toggle",
+    "when": "chatIsEnabled"
+  },
+  {
+    "key": "shift+alt+oem_minus",
+    "command": "gitlens.diffWithWorking",
+    "when": "editorTextFocus && gitlens:enabled && config.gitlens.keymap == 'alternate' && resourceScheme =~ /^(gitlens|git|pr)$/"
+  },
+  {
+    "key": "ctrl+shift+alt+g",
+    "command": "workbench.view.extension.gitlensInspect"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "workbench.files.action.refreshFilesExplorer",
+    "when": "filesExplorerFocus"
+  },
+  {
+    "key": "shift+alt+x",
+    "command": "issue.openGithubPermalink"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "closeQuickDiff",
+    "when": "dirtyDiffVisible"
   }
 ]

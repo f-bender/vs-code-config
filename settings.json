@@ -959,6 +959,46 @@
         "vscode-harpoon.gotoPreviousHarpoonEditor"
       ]
     },
+    {
+      "before": [
+        "<C-o>",
+      ],
+      "after": [
+        "<C-o>",
+        "z",
+        "z",
+      ]
+    },
+    {
+      "before": [
+        "<C-i>",
+      ],
+      "after": [
+        "<C-i>",
+        "z",
+        "z",
+      ]
+    },
+    {
+      "before": [
+        "<C-r>",
+      ],
+      "after": [
+        "<C-r>",
+        "z",
+        "z",
+      ]
+    },
+    {
+      "before": [
+        "u",
+      ],
+      "after": [
+        "u",
+        "z",
+        "z",
+      ]
+    },
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
@@ -1554,5 +1594,19 @@
   "github.copilot.chat.editor.temporalContext.enabled": true,
   "workbench.sideBar.location": "right",
   "workbench.navigationControl.enabled": false,
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  },
   "vim.easymotionMarkerForegroundColorOneChar": "#ffffff",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorCustomizations": {
+    "editorIndentGuide.background1": "#FFFF404C",
+    "editorIndentGuide.background2": "#7FFF7F4C",
+    "editorIndentGuide.background3": "#FF7FFF4C",
+    "editorIndentGuide.background4": "#4FECEC4C",
+    "editorIndentGuide.activeBackground1": "#FFFF4099",
+    "editorIndentGuide.activeBackground2": "#7FFF7F99",
+    "editorIndentGuide.activeBackground3": "#FF7FFF99",
+    "editorIndentGuide.activeBackground4": "#4FECEC99",
+  }
 }
