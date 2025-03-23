@@ -8,6 +8,7 @@
     "behaviour",
     "bfill",
     "chdir",
+    "copyto",
     "coret",
     "creds",
     "customizability",
@@ -19,15 +20,18 @@
     "dtypes",
     "duckdb",
     "fillna",
+    "flipud",
     "genai",
     "gunicorn",
     "hrefs",
     "htmx",
     "idxs",
     "Iframe",
+    "iinfo",
     "iloc",
     "imread",
     "infile",
+    "intp",
     "ints",
     "ipynb",
     "isin",
@@ -979,26 +983,26 @@
         "z",
       ]
     },
-    {
-      "before": [
-        "<C-r>",
-      ],
-      "after": [
-        "<C-r>",
-        "z",
-        "z",
-      ]
-    },
-    {
-      "before": [
-        "u",
-      ],
-      "after": [
-        "u",
-        "z",
-        "z",
-      ]
-    },
+    // {
+    //   "before": [
+    //     "<C-r>",
+    //   ],
+    //   "after": [
+    //     "<C-r>",
+    //     "z",
+    //     "z",
+    //   ]
+    // },
+    // {
+    //   "before": [
+    //     "u",
+    //   ],
+    //   "after": [
+    //     "u",
+    //     "z",
+    //     "z",
+    //   ]
+    // },
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {

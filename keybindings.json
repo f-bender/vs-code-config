@@ -796,8 +796,14 @@
   },
   {
     "key": "ctrl+oem_1",
-    "command": "git.openChange",
-    "when": "editorFocus && !isInDiffEditor"
+    "command": "runCommands",
+    "when": "editorFocus && !isInDiffEditor",
+    "args": {
+      "commands": [
+        "git.openChange",
+        "workbench.action.focusActiveEditorGroup",
+      ]
+    }
   },
   {
     "key": "ctrl+shift+oem_1",
@@ -2163,5 +2169,15 @@
     "key": "ctrl+l",
     "command": "closeQuickDiff",
     "when": "dirtyDiffVisible"
+  },
+  {
+    "key": "ctrl+shift+alt+enter",
+    "command": "chatEditor.action.accept",
+    "when": "chatEdits.hasEditorModifications && editorFocus && !chatEdits.isRequestInProgress"
+  },
+  {
+    "key": "ctrl+shift+alt+backspace",
+    "command": "chatEditor.action.reject",
+    "when": "chatEdits.hasEditorModifications && editorFocus && !chatEdits.isRequestInProgress"
   }
 ]
