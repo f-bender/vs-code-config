@@ -2179,5 +2179,20 @@
     "key": "ctrl+shift+alt+backspace",
     "command": "chatEditor.action.reject",
     "when": "chatEdits.hasEditorModifications && editorFocus && !chatEdits.isRequestInProgress"
+  },
+  {
+    "key": "tab",
+    "command": "editor.action.inlineSuggest.acceptNextInlineEditPart",
+    "when": "inlineEditIsVisible && vim.mode == 'Normal'"
+  },
+  {
+    "key": "tab",
+    "command": "editor.action.inlineSuggest.jump",
+    "when": "inlineEditIsVisible && tabShouldJumpToInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible && vim.mode == 'Normal'"
+  },
+  {
+    "key": "tab",
+    "command": "-editor.action.inlineSuggest.jump",
+    "when": "inlineEditIsVisible && tabShouldJumpToInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
   }
 ]

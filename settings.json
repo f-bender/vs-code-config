@@ -57,6 +57,7 @@
     "pyproject",
     "pytest",
     "Referer",
+    "reprs",
     "reraised",
     "responsibles",
     "rtype",
@@ -1612,5 +1613,7 @@
     "editorIndentGuide.activeBackground2": "#7FFF7F99",
     "editorIndentGuide.activeBackground3": "#FF7FFF99",
     "editorIndentGuide.activeBackground4": "#4FECEC99",
-  }
+  },
+  "github.copilot.chat.agent.thinkingTool": true,
+  "github.copilot.nextEditSuggestions.enabled": true,
 }
