@@ -1,7 +1,4 @@
 {
-  // Amazon Q / Code Whisperer
-  "amazonQ.shareContentWithAWS": false,
-  // General
   "cSpell.userWords": [
     "aimet",
     "astype",
@@ -20,7 +17,9 @@
     "dtypes",
     "duckdb",
     "fillna",
+    "fillup",
     "flipud",
+    "gaussians",
     "genai",
     "gunicorn",
     "hrefs",
@@ -45,17 +44,20 @@
     "ndim",
     "ndindex",
     "nlevels",
+    "npte",
     "numpad",
     "numpy",
     "paramtype",
     "Plotly",
     "Prio",
     "pydantic",
+    "pydocstyle",
     "pyenv",
     "Pygame",
     "pynput",
     "pyproject",
     "pytest",
+    "pythonify",
     "Referer",
     "reprs",
     "reraised",
@@ -164,12 +166,6 @@
     "editor.defaultFormatter": "charliermarsh.ruff"
   },
   "ruff.lineLength": 120,
-  "ruff.format.args": [
-    "--line-length=120"
-  ],
-  "ruff.lint.args": [
-    "--line-length=120"
-  ],
   "yaml.customTags": [
     "!And",
     "!And sequence",
@@ -1501,6 +1497,32 @@
         "vscode-harpoon.gotoPreviousHarpoonEditor"
       ]
     },
+    {
+      "before": [
+        "<C-n>"
+      ],
+      "commands": [
+        ":nohl"
+      ]
+    },
+    {
+      "before": [
+        "<C-o>"
+      ],
+      "after": [
+        "<Esc>",
+        "<C-o>",
+      ]
+    },
+    {
+      "before": [
+        "<C-i>"
+      ],
+      "after": [
+        "<Esc>",
+        "<C-i>"
+      ]
+    },
   ],
   "vim.insertModeKeyBindingsNonRecursive": [
     {
@@ -1527,6 +1549,16 @@
       ],
       "after": [
         "<C-l>"
+      ],
+    },
+  ],
+  "vim.operatorPendingModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<C-l>"
+      ],
+      "after": [
+        "<Esc>"
       ],
     },
   ],
@@ -1593,7 +1625,7 @@
   "python.terminal.shellIntegration.enabled": true,
   "github.copilot.chat.testGeneration.instructions": [
     {
-      "text": "Always write tests in pytest style. Avoid code duplication during test setup by using pytest fixtures. Always include comments in the form of # GIVEN, # WHEN, # THEN. Always include short docstrings for the test module, each fixture, and each test function. Create separate test functions for every test."
+      "text": "Always create tests in a tests/ directory that mirrors the structure of the src/ directory. Always write tests in pytest style. Avoid code duplication during test setup by using pytest fixtures. Always include comments in the form of # GIVEN, # WHEN, # THEN. Always include short docstrings for the test module, each fixture, and each test function. Create separate test functions for every test. Always include type hints for every function argument and return type."
     }
   ],
   "github.copilot.chat.editor.temporalContext.enabled": true,
@@ -1614,6 +1646,14 @@
     "editorIndentGuide.activeBackground3": "#FF7FFF99",
     "editorIndentGuide.activeBackground4": "#4FECEC99",
   },
-  "github.copilot.chat.agent.thinkingTool": true,
+  "git.blame.editorDecoration.enabled": false, // already covered by gitlens
+  "inlineChat.accessibleDiffView": "on",
+  "inlineChat.enableV2": true,
+  "inlineChat.hideOnRequest": true,
   "github.copilot.nextEditSuggestions.enabled": true,
+  "github.copilot.nextEditSuggestions.fixes": true,
+  "workbench.editor.empty.hint": "hidden",
+  "terminal.integrated.suggest.enabled": true,
+  "python.analysis.supportAllPythonDocuments": true,
+  "github.copilot.chat.agent.thinkingTool": true
 }
