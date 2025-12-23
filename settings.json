@@ -5,6 +5,8 @@
     "behaviour",
     "bfill",
     "chdir",
+    "cmap",
+    "colorcet",
     "copyto",
     "coret",
     "creds",
@@ -37,6 +39,7 @@
     "iterrows",
     "jsdelivr",
     "kpis",
+    "levelup",
     "mddump",
     "mypy",
     "ndarray",
@@ -49,6 +52,7 @@
     "numpy",
     "paramtype",
     "Plotly",
+    "POWERUP",
     "Prio",
     "pydantic",
     "pydocstyle",
@@ -1655,5 +1659,6 @@
   "workbench.editor.empty.hint": "hidden",
   "terminal.integrated.suggest.enabled": true,
   "python.analysis.supportAllPythonDocuments": true,
-  "github.copilot.chat.agent.thinkingTool": true
+  "github.copilot.chat.agent.thinkingTool": true,
+  "vim.smartRelativeLine": true
 }
