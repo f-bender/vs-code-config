@@ -9,6 +9,7 @@
     "colorcet",
     "copyto",
     "coret",
+    "cpus",
     "creds",
     "customizability",
     "dateutil",
@@ -18,6 +19,7 @@
     "dtype",
     "dtypes",
     "duckdb",
+    "elif",
     "fillna",
     "fillup",
     "flipud",
@@ -32,13 +34,17 @@
     "iloc",
     "imread",
     "infile",
+    "inplace",
     "intp",
     "ints",
     "ipynb",
     "isin",
+    "isort",
+    "isscalar",
     "iterrows",
     "jsdelivr",
     "kpis",
+    "kubelogin",
     "levelup",
     "mddump",
     "mypy",
@@ -48,18 +54,23 @@
     "ndindex",
     "nlevels",
     "npte",
+    "numba",
     "numpad",
     "numpy",
     "paramtype",
     "Plotly",
+    "popen",
     "POWERUP",
     "Prio",
+    "pyarrow",
     "pydantic",
     "pydocstyle",
     "pyenv",
     "Pygame",
+    "pylint",
     "pynput",
     "pyproject",
+    "pyright",
     "pytest",
     "pythonify",
     "Referer",
@@ -146,7 +157,7 @@
   },
   "redhat.telemetry.enabled": false,
   "jupyter.askForKernelRestart": false,
-  "terminal.integrated.defaultProfile.windows": "Ubuntu-20.04 (WSL)",
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
   "explorer.confirmDragAndDrop": false,
   "terminal.integrated.cursorStyle": "line",
   "notebook.output.textLineLimit": 200,
@@ -211,7 +222,7 @@
   ],
   "python.analysis.inlayHints.functionReturnTypes": true,
   "python.analysis.inlayHints.variableTypes": false, // clutters to much for my taste (especially for unions of many types)
-  "python.analysis.typeCheckingMode": "strict", // "strict" commonly complains about missing stubs
+  "python.analysis.typeCheckingMode": "basic", // "strict" commonly complains about missing stubs
   "python.analysis.autoFormatStrings": true,
   "python.analysis.importFormat": "absolute",
   "python.analysis.autoImportCompletions": true,
@@ -352,6 +363,7 @@
     {
       "before": [
         "<leader>",
+        "<leader>",
         "x"
       ],
       "after": [
@@ -362,6 +374,7 @@
     },
     {
       "before": [
+        "<leader>",
         "<leader>",
         "c"
       ],
@@ -374,6 +387,7 @@
     {
       "before": [
         "<leader>",
+        "<leader>",
         "d"
       ],
       "after": [
@@ -385,6 +399,7 @@
     {
       "before": [
         "<leader>",
+        "<leader>",
         "C"
       ],
       "after": [
@@ -395,6 +410,7 @@
     },
     {
       "before": [
+        "<leader>",
         "<leader>",
         "D"
       ],
@@ -415,7 +431,6 @@
     {
       "before": [
         "<leader>",
-        "<leader>",
         "y"
       ],
       "after": [
@@ -426,7 +441,6 @@
     },
     {
       "before": [
-        "<leader>",
         "<leader>",
         "Y"
       ],
@@ -439,7 +453,6 @@
     {
       "before": [
         "<leader>",
-        "<leader>",
         "p"
       ],
       "after": [
@@ -450,7 +463,6 @@
     },
     {
       "before": [
-        "<leader>",
         "<leader>",
         "P"
       ],
@@ -1009,6 +1021,7 @@
     {
       "before": [
         "<leader>",
+        "<leader>",
         "p"
       ],
       "after": [
@@ -1021,7 +1034,6 @@
     {
       "before": [
         "<leader>",
-        "<leader>",
         "y"
       ],
       "after": [
@@ -1033,7 +1045,6 @@
     {
       "before": [
         "<leader>",
-        "<leader>",
         "p"
       ],
       "after": [
@@ -1044,7 +1055,6 @@
     },
     {
       "before": [
-        "<leader>",
         "<leader>",
         "P"
       ],
@@ -1131,6 +1141,7 @@
     {
       "before": [
         "<leader>",
+        "<leader>",
         "x"
       ],
       "after": [
@@ -1141,6 +1152,7 @@
     },
     {
       "before": [
+        "<leader>",
         "<leader>",
         "c"
       ],
@@ -1153,6 +1165,7 @@
     {
       "before": [
         "<leader>",
+        "<leader>",
         "d"
       ],
       "after": [
@@ -1164,6 +1177,7 @@
     {
       "before": [
         "<leader>",
+        "<leader>",
         "C"
       ],
       "after": [
@@ -1174,6 +1188,7 @@
     },
     {
       "before": [
+        "<leader>",
         "<leader>",
         "D"
       ],
@@ -1604,7 +1619,6 @@
   },
   "diffEditor.renderSideBySide": true,
   "python.analysis.inlayHints.pytestParameters": true,
-  "cSpell.allowCompoundWords": true,
   "githubPullRequests.fileListLayout": "flat",
   "vim.camelCaseMotion.enable": true,
   "terminal.integrated.commandsToSkipShell": [
@@ -1629,11 +1643,10 @@
   "python.terminal.shellIntegration.enabled": true,
   "github.copilot.chat.testGeneration.instructions": [
     {
-      "text": "Always create tests in a tests/ directory that mirrors the structure of the src/ directory. Always write tests in pytest style. Avoid code duplication during test setup by using pytest fixtures. Always include comments in the form of # GIVEN, # WHEN, # THEN. Always include short docstrings for the test module, each fixture, and each test function. Create separate test functions for every test. Always include type hints for every function argument and return type."
+      "text": "Always create tests in a tests/ directory that mirrors the structure of the src/ directory. Always write tests in pytest style. Avoid code duplication during test setup by using pytest fixtures. Always include comments in the form of # GIVEN, # WHEN, # THEN. Always include short docstrings for the test module, each fixture, and each test function. Create separate test functions for every test. Always include type hints for every function argument and return type, even for mocks and fixtures, and even if the return type is None."
     }
   ],
   "github.copilot.chat.editor.temporalContext.enabled": true,
-  "workbench.sideBar.location": "right",
   "workbench.navigationControl.enabled": false,
   "[markdown]": {
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
@@ -1660,5 +1673,21 @@
   "terminal.integrated.suggest.enabled": true,
   "python.analysis.supportAllPythonDocuments": true,
   "github.copilot.chat.agent.thinkingTool": true,
-  "vim.smartRelativeLine": true
+  "docker.extension.enableComposeLanguageServer": false,
+  "workbench.settings.showAISearchToggle": true,
+  "python.useEnvironmentsExtension": true,
+  "cSpell.allowCompoundWords": true,
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "chat.emptyState.history.enabled": true,
+  "workbench.sideBar.location": "right",
+  "vim.smartRelativeLine": true,
+  "chat.agent.maxRequests": 100
 }

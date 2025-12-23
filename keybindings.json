@@ -309,11 +309,6 @@
     "when": "editorHoverFocused && vim.active"
   },
   {
-    "key": "ctrl+shift+l",
-    "command": "workbench.action.focusActiveEditorGroup",
-    "when": "terminalFocus || sideBarFocus"
-  },
-  {
     "key": "ctrl+j",
     "command": "workbench.action.quickOpenSelectNext",
     "when": "inQuickOpen"
@@ -792,7 +787,7 @@
   {
     "key": "alt+oem_1",
     "command": "toggle.diff.renderSideBySide",
-    "when": "textCompareEditorVisible"
+    "when": "textCompareEditorVisible || activeEditor == 'multiDiffEditor'"
   },
   {
     "key": "ctrl+oem_1",
@@ -1137,8 +1132,14 @@
   },
   {
     "key": "ctrl+shift+oem_1",
-    "command": "pr.openDiffViewFromEditor",
-    "when": "editorFocus && github:activePullRequest.active && github:activePullRequest.visible && !isInDiffEditor"
+    "command": "runCommands",
+    "when": "editorFocus && github:activePullRequest.active && github:activePullRequest.visible && !isInDiffEditor",
+    "args": {
+      "commands": [
+        "pr.openDiffViewFromEditor",
+        "workbench.action.focusActiveEditorGroup",
+      ]
+    }
   },
   {
     "key": "ctrl+shift+u",
@@ -1476,7 +1477,7 @@
   {
     "key": "ctrl+l",
     "command": "extension.vim_navigateCtrlL",
-    "when": "editorTextFocus && vim.active && vim.use<C-l> && !inDebugRepl && !panelFocus && vim.mode != 'EasyMotionInputMode' && vim.mode != 'EasyMotionMode'" // && (vim.mode != 'Normal' || editorHasMultipleSelections)" // useful for notebooks, but doesn't work with operatorpending...
+    "when": "editorTextFocus && vim.active && vim.use<C-l> && !inDebugRepl && !panelFocus && vim.mode != 'EasyMotionInputMode' && vim.mode != 'EasyMotionMode' && (vim.mode != 'Normal' || editorHasMultipleSelections || (vim.command != '' && vim.command != '<Esc>'))" // `(vim.command != '' && vim.command != '<Esc>')` is trying to emulate `vim.mode == 'OperatorPendingMode'` (but OperatorPendingMode isn't working for some reason) - vim.command contains the last command (or the currently pending one), so after performing any non-pending command, this doesn't immediately behave as expected, but after hitting Ctrl+L once, vim.command becomes '<Esc>' and then hitting it again works. I.e. in notebooks, you sometimes have to double-tap Ctrl+L to exit the cell edit mode.
   },
   {
     "key": "ctrl+l",
@@ -1564,7 +1565,7 @@
     }
   },
   {
-    "key": "ctrl+shift+alt+oem_1",
+    "key": "ctrl+shift+alt+oem_1 s",
     "command": "git.viewStagedChanges"
   },
   // the below is commented out because it just feels more natural to be able to tab the suggestion into existence
@@ -1963,9 +1964,9 @@
     "when": "workbench.panel.chat.view.copilot.active"
   },
   {
-    "key": "ctrl+shift+m ctrl+shift+oem_comma",
+    "key": "ctrl+alt+j",
     "command": "workbench.action.toggleAuxiliaryBar",
-    "when": "false"
+    "when": "!editorFocus && !terminalFocus"
   },
   {
     "key": "ctrl+alt+b",
@@ -1993,7 +1994,7 @@
   {
     "key": "ctrl+enter",
     "command": "editor.action.inlineSuggest.trigger",
-    "when": "config.github.copilot.inlineSuggest.enable && editorTextFocus && !editorHasSelection && !inlineSuggestionsVisible && !commentEditorFocused"
+    "when": "editorTextFocus && !editorHasSelection && !inlineSuggestionsVisible && !commentEditorFocused"
   },
   {
     "key": "ctrl+enter",
@@ -2409,5 +2410,86 @@
     "key": "tab",
     "command": "-extension.vim_tab",
     "when": "editorTextFocus && vim.active && !inDebugRepl && !inlineEditIsVisible && vim.mode != 'Insert'"
+  },
+  {
+    "key": "ctrl+shift+m ctrl+shift+m",
+    "command": "inlineChat2.reveal",
+    "when": "inlineChatHasEditsAgent && !chatEdits.isGlobalEditingSession && chatEdits.requestCount >= 1"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "-inlineChat2.reveal",
+    "when": "inlineChatHasEditsAgent && !chatEdits.isGlobalEditingSession && chatEdits.requestCount >= 1"
+  },
+  {
+    "key": "ctrl+alt+k",
+    "command": "workbench.action.toggleMaximizedAuxiliaryBar",
+    "when": "!editorFocus && !terminalFocus"
+  },
+  {
+    "key": "alt+oem_comma",
+    "command": "gitlens.diffWithPrevious",
+    "when": "editorTextFocus && config.gitlens.keymap == 'alternate'"
+  },
+  {
+    "key": "alt+oem_comma",
+    "command": "-gitlens.diffWithPrevious",
+    "when": "editorTextFocus && config.gitlens.keymap == 'alternate' && resource in 'gitlens:tabs:tracked'"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "search.action.refreshSearchResults",
+    "when": "view == 'workbench.view.search' && searchState != '2'"
+  },
+  {
+    "key": "ctrl+shift+n",
+    "command": "workbench.action.chat.newChat",
+    "when": "chatIsEnabled && inChat"
+  },
+  {
+    "key": "ctrl+alt+p",
+    "command": "workbench.action.chat.previousUserPrompt",
+    "when": "chatIsEnabled && inChat"
+  },
+  {
+    "key": "ctrl+alt+n",
+    "command": "workbench.action.chat.nextUserPrompt",
+    "when": "chatIsEnabled && inChat"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "multiDiffEditor.goToPreviousChange",
+    "when": "activeEditor == 'multiDiffEditor' && editorFocus"
+  },
+  {
+    "key": "shift+alt+f5",
+    "command": "-multiDiffEditor.goToPreviousChange",
+    "when": "activeEditor == 'multiDiffEditor'"
+  },
+  {
+    "key": "ctrl+shift+j",
+    "command": "multiDiffEditor.goToNextChange",
+    "when": "activeEditor == 'multiDiffEditor' && editorFocus"
+  },
+  {
+    "key": "alt+f5",
+    "command": "-multiDiffEditor.goToNextChange",
+    "when": "activeEditor == 'multiDiffEditor'"
+  },
+  {
+    "key": "ctrl+shift+alt+oem_1 c",
+    "command": "git.viewChanges"
+  },
+  {
+    "key": "ctrl+shift+alt+oem_1 u",
+    "command": "git.viewUntrackedChanges"
+  },
+  {
+    "key": "ctrl+shift+alt+oem_1 p",
+    "command": "pr.openChanges"
+  },
+  {
+    "key": "ctrl+shift+alt+oem_1 ctrl+shift+alt+oem_1",
+    "command": "git.viewChanges"
   }
 ]
